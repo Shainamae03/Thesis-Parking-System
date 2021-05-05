@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Security App</string>
+    <string name="Access_Code" />
+    <string name="Access_Name" />
+    <string name="Secu_Code" />
+    <string name="Secu_Name" />
+</resources>
