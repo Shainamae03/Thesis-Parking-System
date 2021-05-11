@@ -4,4 +4,18 @@
     <string name="Access_Name" />
     <string name="Secu_Code" />
     <string name="Secu_Name" />
+    <string name="col1">LogID</string>
+    <string name="col2">Date</string>
+    <string name="col3">Time</string>
+    <string name="col4">Client</string>
+    <string name="col5">Gate</string>
+    <string name="col6">Transit</string>
+    <string name="row1LogID">12312</string>
+    <string name="row1Date">5/9/2021</string>
+    <string name="row1Time">5/9/021</string>
+    <string name="row1Client">5:00am</string>
+    <string name="row1Gate">3</string>
+    <string name="row1Transit">Entry</string>
+    <string name="back2_button" />
+    <string name="generateID" />
 </resources>

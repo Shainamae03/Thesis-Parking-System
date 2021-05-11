@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
             button.setOnClickListener {
                 val Secu_Name = secuname.text;
                 val Secu_Code = code.text;
-                startActivity(Intent(this@MainActivity, Notification::class.java))
+                startActivity(Intent(this@MainActivity, Captcha::class.java))
 
             }
             button2.setOnClickListener {

@@ -29,7 +29,7 @@ class Notification : AppCompatActivity() {
                 dialog.cancel()
             })
             val alert = alertDialog.create();
-            alert.setTitle("Approve Upon Entry")
+            alert.setTitle("Approve to Enter")
             alert.show()
 
         }
@@ -45,7 +45,7 @@ class Notification : AppCompatActivity() {
                 dialog.cancel()
             })
             val alert = alertDialog.create();
-            alert.setTitle("Deny Upon Entry")
+            alert.setTitle("Decline to Enter")
             alert.show()
 
             }
