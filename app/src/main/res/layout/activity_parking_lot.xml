@@ -4,6 +4,7 @@
     android:id="@+id/relativeLayout2"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:padding="15dp">
 
     <TableLayout
@@ -15,7 +16,7 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/maroon">
+            android:background="@color/gold">
 
             <TextView
                 android:layout_width="0dp"

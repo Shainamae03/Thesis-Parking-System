@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login4"
+    android:background="@drawable/bg1"
     android:orientation="vertical"
     tools:context=".Notification">
 
@@ -123,7 +123,7 @@
         android:layout_width="150dp"
         android:layout_height="55dp"
         android:layout_marginEnd="188dp"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="92dp"
         android:backgroundTint="@color/yellow"
         android:text="Approve to Enter"
         android:textColor="@color/black"

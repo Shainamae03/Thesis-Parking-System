@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/login4"
+    android:background="@drawable/bg1"
     tools:context=".SecurityReport">
 
     <TextView
@@ -28,6 +28,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="392dp"
         android:backgroundTint="@color/gold"
+        android:background="@drawable/button"
         android:text="I can't login using the Access Code"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,6 +41,7 @@
         android:layout_marginEnd="60dp"
         android:layout_marginBottom="312dp"
         android:backgroundTint="@color/gold"
+        android:background="@drawable/button"
         android:text="Failed to login using Access Code"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,6 +54,7 @@
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="224dp"
         android:backgroundTint="@color/gold"
+        android:background="@drawable/button"
         android:text="Change my system generated access code to personal code"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,6 +67,7 @@
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="140dp"
         android:backgroundTint="@color/gold"
+        android:background="@drawable/button"
         android:text="QR pass failed to give proper information"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -74,6 +78,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="144dp"
+        android:background="@drawable/button"
         android:layout_marginBottom="64dp"
         android:backgroundTint="@color/gold"
         android:text="BACK"

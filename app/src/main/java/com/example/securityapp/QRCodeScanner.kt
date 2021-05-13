@@ -1,20 +1,21 @@
 package com.example.securityapp
 
 import android.Manifest
+import android.content.DialogInterface
+import android.content.Intent
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import com.budiyev.android.codescanner.AutoFocusMode
-import com.budiyev.android.codescanner.CodeScanner
-import com.budiyev.android.codescanner.CodeScannerView
-import com.budiyev.android.codescanner.DecodeCallback
-import com.budiyev.android.codescanner.ErrorCallback
-import com.budiyev.android.codescanner.ScanMode
+import com.budiyev.android.codescanner.*
+private const val CAMERA_REQUEST_CODE = 101
 
-class QRCodeScanner : AppCompatActivity() {
+class QRCodeScanner() : AppCompatActivity() {
 
     private lateinit var codeScanner: CodeScanner
 
@@ -22,8 +23,9 @@ class QRCodeScanner : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_q_r_code_scanner)
 
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) ==
-            PackageManager.PERMISSION_DENIED
+                PackageManager.PERMISSION_DENIED
         ) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 123)
         } else {
@@ -32,7 +34,7 @@ class QRCodeScanner : AppCompatActivity() {
     }
     private fun startScanning(){
         val scannerView: CodeScannerView = findViewById(R.id.scanner_view)
-        codeScanner = CodeScanner( this, scannerView)
+        codeScanner = CodeScanner(this, scannerView)
         codeScanner.camera = CodeScanner.CAMERA_BACK
         codeScanner.formats = CodeScanner.ALL_FORMATS
 
@@ -44,12 +46,17 @@ class QRCodeScanner : AppCompatActivity() {
 
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                Toast.makeText( this,  "Scan Result ${it.text}" , Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Scan Result Name: \n Plate No.${it.text}", Toast.LENGTH_SHORT).show()
+                val textView = findViewById(R.id.textView) as TextView
+                textView.text = it.text
+
+
+
             }
         }
         codeScanner.errorCallback = ErrorCallback {
             runOnUiThread {
-                Toast.makeText( this, "Camera inilization Error:${it.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Camera inilization Error:${it.message}", Toast.LENGTH_SHORT).show()
             }
         }
         scannerView.setOnClickListener {
@@ -61,10 +68,11 @@ class QRCodeScanner : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 123){
             if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                Toast.makeText( this, "Camera Permission Granted", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Camera Permission Granted", Toast.LENGTH_SHORT).show()
                 startScanning()
+
             }else{
-                Toast.makeText(this, "Camera Permission Denied ", Toast. LENGTH_SHORT).show()
+                Toast.makeText(this, "Camera Permission Denied ", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -82,4 +90,7 @@ class QRCodeScanner : AppCompatActivity() {
         }
         super.onPause()
     }
+
 }
+
+
