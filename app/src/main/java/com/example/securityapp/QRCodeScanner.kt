@@ -46,7 +46,7 @@ class QRCodeScanner() : AppCompatActivity() {
 
         codeScanner.decodeCallback = DecodeCallback {
             runOnUiThread {
-                Toast.makeText(this, "Scan Result Name: \n Plate No.${it.text}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Scan Result \n Client Code: ${it.text}", Toast.LENGTH_SHORT).show()
                 val textView = findViewById(R.id.textView) as TextView
                 textView.text = it.text
 
