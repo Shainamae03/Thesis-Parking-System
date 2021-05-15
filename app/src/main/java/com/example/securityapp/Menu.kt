@@ -16,6 +16,7 @@ class Menu : AppCompatActivity() {
         val parking_space = findViewById(R.id.parking_space) as CardView
         val parking_log = findViewById(R.id.parking_log) as CardView
         val parking_scanner = findViewById(R.id.parking_scanner) as CardView
+        val guest = findViewById(R.id.guest) as CardView
         val back = findViewById(R.id.back) as CardView
 
         parking_space.setOnClickListener {
@@ -66,6 +67,20 @@ class Menu : AppCompatActivity() {
             alertDialog.setMessage("Do you want to proceed?")
             alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
                 startActivity(Intent(this@Menu, MainActivity::class.java))
+            })
+            alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
+                dialog.cancel()
+            })
+            val alert = alertDialog.create();
+            alert.setTitle("Do you want to exit?")
+            alert.show()
+        }
+        guest.setOnClickListener {
+            val alertDialog = AlertDialog.Builder(this)
+            alertDialog.setCancelable(false)
+            alertDialog.setMessage("Do you want to proceed?")
+            alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
+                startActivity(Intent(this@Menu, GuestActivity::class.java))
             })
             alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
                 dialog.cancel()
