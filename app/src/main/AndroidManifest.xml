@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecurityApp">
-        <activity android:name=".GuestActivity"></activity>
+        <activity android:name=".ClientInfo"></activity>
+        <activity android:name=".GuestActivity" />
         <activity android:name=".Menu" />
         <activity android:name=".QRCodeScanner" />
         <activity android:name=".SecurityReport" />

@@ -16,18 +16,16 @@ class MainActivity : AppCompatActivity() {
 
             val secuname = findViewById(R.id.secuname) as EditText
             val code = findViewById(R.id.code) as EditText
-            val  button = findViewById(R.id.button) as Button
-            val button2 = findViewById(R.id.button2) as Button
+            val login = findViewById(R.id.login) as Button
 
-            button.setOnClickListener {
+
+           login.setOnClickListener {
                 val Secu_Name = secuname.text;
                 val Secu_Code = code.text;
                 startActivity(Intent(this@MainActivity, Menu::class.java))
 
             }
-            button2.setOnClickListener {
-                finishAffinity()
-            }
+
         }
     }
 

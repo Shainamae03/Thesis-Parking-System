@@ -1,27 +1,30 @@
 package com.example.securityapp
 
 import android.Manifest
-import android.content.DialogInterface
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.*
+
 private const val CAMERA_REQUEST_CODE = 101
 
 class QRCodeScanner() : AppCompatActivity() {
 
     private lateinit var codeScanner: CodeScanner
+    var QR_Output = ""
+    private lateinit var tv: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_q_r_code_scanner)
+
+
 
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) ==
@@ -49,9 +52,7 @@ class QRCodeScanner() : AppCompatActivity() {
                 Toast.makeText(this, "Scan Result \n Client Code: ${it.text}", Toast.LENGTH_SHORT).show()
                 val textView = findViewById(R.id.textView) as TextView
                 textView.text = it.text
-
-
-
+                startActivity(Intent(this@QRCodeScanner, ParkingLot::class.java))
             }
         }
         codeScanner.errorCallback = ErrorCallback {

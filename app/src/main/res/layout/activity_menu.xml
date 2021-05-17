@@ -30,6 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:background="@color/grey"
                 tools:ignore="UselessLeaf">
              <ImageView
                  android:layout_width="150dp"
@@ -41,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="@color/white"
-                    android:text="Parking Space"/>
+                    android:text="PARKING SPACE"/>
 
             </LinearLayout>
 
@@ -59,6 +60,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:background="@color/grey"
                 tools:ignore="UselessLeaf">
                 <ImageView
                     android:layout_width="150dp"
@@ -70,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:layout_gravity="center"
-                    android:text="Parking Log"/>
+                    android:text="PARLKING LOG"/>
 
             </LinearLayout>
 
@@ -88,6 +90,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:background="@color/grey"
                 tools:ignore="UselessLeaf">
                 <ImageView
                     android:layout_width="150dp"
@@ -99,7 +102,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="@color/white"
-                    android:text="Parking Scanner"/>
+                    android:text="Parking SCANNER"/>
 
             </LinearLayout>
 
@@ -117,6 +120,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:background="@color/grey"
                 tools:ignore="UselessLeaf">
                 <ImageView
                     android:layout_width="150dp"
@@ -128,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="@color/white"
-                    android:text="Guest" />
+                    android:text="GUEST" />
 
             </LinearLayout>
 
@@ -146,6 +150,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:background="@color/grey"
                 tools:ignore="UselessLeaf">
                 <ImageView
                     android:layout_width="150dp"
@@ -157,7 +162,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="@color/white"
-                    android:text="Back"/>
+                    android:text="LOGOUT"/>
 
             </LinearLayout>
 
