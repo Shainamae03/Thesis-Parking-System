@@ -1,0 +1,98 @@
+{
+  "project_info": {
+    "project_number": "206455541579",
+    "firebase_url": "https://smartparking-8f4ff-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "smartparking-8f4ff",
+    "storage_bucket": "smartparking-8f4ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206455541579:android:49ef48d8930feba2b762ce",
+        "android_client_info": {
+          "package_name": "com.example.clientapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206455541579-mf5pq54qhkeoc87q05vdpmdcsef35qhk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNOcc2C9QGATU64K9hZnQfkRjo9CGz80M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206455541579-mf5pq54qhkeoc87q05vdpmdcsef35qhk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206455541579:android:324b8357b0e34a35b762ce",
+        "android_client_info": {
+          "package_name": "com.example.securityapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206455541579-mf5pq54qhkeoc87q05vdpmdcsef35qhk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNOcc2C9QGATU64K9hZnQfkRjo9CGz80M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206455541579-mf5pq54qhkeoc87q05vdpmdcsef35qhk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206455541579:android:fa4df3179a6f3e97b762ce",
+        "android_client_info": {
+          "package_name": "com.thesis.admin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206455541579-mf5pq54qhkeoc87q05vdpmdcsef35qhk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNOcc2C9QGATU64K9hZnQfkRjo9CGz80M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206455541579-mf5pq54qhkeoc87q05vdpmdcsef35qhk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
