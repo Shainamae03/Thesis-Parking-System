@@ -1,23 +1,31 @@
 package com.example.securityapp
 
 import android.Manifest
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
-import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.*
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 private const val CAMERA_REQUEST_CODE = 101
 
 class QRCodeScanner() : AppCompatActivity() {
 
+
+    private var mFirebaseDatabase: DatabaseReference? = null
+    private var mFirebaseInstance: FirebaseDatabase? = null
+
+
     private lateinit var codeScanner: CodeScanner
-    var QR_Output = ""
     private lateinit var tv: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,16 +34,17 @@ class QRCodeScanner() : AppCompatActivity() {
 
 
 
-
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) ==
-                PackageManager.PERMISSION_DENIED
+            PackageManager.PERMISSION_DENIED
         ) {
             ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CAMERA), 123)
         } else {
             startScanning()
         }
+
     }
-    private fun startScanning(){
+
+    private fun startScanning() {
         val scannerView: CodeScannerView = findViewById(R.id.scanner_view)
         codeScanner = CodeScanner(this, scannerView)
         codeScanner.camera = CodeScanner.CAMERA_BACK
@@ -48,16 +57,29 @@ class QRCodeScanner() : AppCompatActivity() {
 
 
         codeScanner.decodeCallback = DecodeCallback {
+
+
+
             runOnUiThread {
-                Toast.makeText(this, "Scan Result \n Client Code: ${it.text}", Toast.LENGTH_SHORT).show()
+
+                val df = SimpleDateFormat("EEE MM/dd/yyyy hh:mm.ss aa")
+                val c = Calendar.getInstance()
+                val str_time: String = df.format(c.time)
+
+
+                Toast.makeText(applicationContext,
+                    "Scan Result \n Client Code: ${it.text} \n  \"Progress saved at $str_time ", Toast.LENGTH_SHORT).show()
                 val textView = findViewById(R.id.textView) as TextView
+                val MyDateText = findViewById(R.id.MyDateText) as TextView
+                MyDateText.text = "$str_time"
                 textView.text = it.text
-                startActivity(Intent(this@QRCodeScanner, ParkingLot::class.java))
             }
         }
         codeScanner.errorCallback = ErrorCallback {
             runOnUiThread {
-                Toast.makeText(this, "Camera inilization Error:${it.message}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Camera inilization Error:${it.message}", Toast.LENGTH_SHORT)
+                    .show()
+
             }
         }
         scannerView.setOnClickListener {
@@ -65,14 +87,18 @@ class QRCodeScanner() : AppCompatActivity() {
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray){
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == 123){
-            if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+        if (requestCode == 123) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(this, "Camera Permission Granted", Toast.LENGTH_SHORT).show()
                 startScanning()
 
-            }else{
+            } else {
                 Toast.makeText(this, "Camera Permission Denied ", Toast.LENGTH_SHORT).show()
             }
         }
@@ -80,18 +106,15 @@ class QRCodeScanner() : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if(::codeScanner.isInitialized){
+        if (::codeScanner.isInitialized) {
             codeScanner?.startPreview()
         }
     }
 
     override fun onPause() {
-        if(::codeScanner.isInitialized){
+        if (::codeScanner.isInitialized) {
             codeScanner?.releaseResources()
         }
         super.onPause()
     }
-
 }
-
-

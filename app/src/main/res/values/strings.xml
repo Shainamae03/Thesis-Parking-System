@@ -2,6 +2,10 @@
     <string name="app_name">Security App</string>
     <string name="Secu_Code" />
     <string name="Secu_Name" />
+    <string name="clientcode"/>
+    <string name="department"/>
+    <string name="email"/>
+    <string name="deptcode"/>
     <string name="col1">LogID</string>
     <string name="col2">Date</string>
     <string name="col3">Time</string>

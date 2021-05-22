@@ -38,5 +38,42 @@
         android:textColor="@android:color/white"
         tools:ignore="HardcodedText" />
 
+    <TextView
+        android:id="@+id/MyDateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scanner_view"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="50dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="20dp"
+        android:text="Date and Time"
+        android:textColor="@android:color/white"
+        tools:ignore="HardcodedText" />
+    <TextView
+        android:id="@+id/idretrfirtname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scanner_view"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="80dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="20dp"
+        android:text="Firstname"
+        android:textColor="@android:color/white"
+        tools:ignore="HardcodedText" />
+    <TextView
+        android:id="@+id/idretrlastname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/scanner_view"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="110dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="20dp"
+        android:text="Lastname"
+        android:textColor="@android:color/white"
+        tools:ignore="HardcodedText" />
+
 
 </RelativeLayout>
