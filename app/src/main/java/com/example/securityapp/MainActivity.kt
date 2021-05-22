@@ -9,11 +9,14 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.*
 import java.util.Scanner
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var authSecu: FirebaseAuth
+    var databaseReferenceSecu : DatabaseReference? = null
+    var databaseSecu: FirebaseDatabase? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,9 +49,30 @@ class MainActivity : AppCompatActivity() {
             )
                     .addOnCompleteListener {
                         if (it.isSuccessful) {
-                            startActivity(Intent(this@MainActivity, Menu::class.java))
-                            finish()
+                            authSecu = FirebaseAuth.getInstance()
+                            databaseSecu = FirebaseDatabase.getInstance()
+                            val currentUserSecu = authSecu.currentUser
+                            val registeredUserID = currentUserSecu?.getUid()
 
+                            databaseReferenceSecu = registeredUserID?.let { it1 -> databaseSecu?.reference!!.child("SecuDb").child(it1) }
+
+                            databaseReferenceSecu?.addValueEventListener(object : ValueEventListener {
+                                override fun onDataChange(snapshot: DataSnapshot) {
+                                    val ClientDb = snapshot.child("as").value.toString()
+                                    if (ClientDb.equals("Security")) {
+                                        startActivity(Intent(this@MainActivity, Menu::class.java))
+
+                                    } else {
+                                        Toast.makeText(this@MainActivity, "Login failed", Toast.LENGTH_LONG)
+                                                .show()
+                                    }
+
+                                }
+
+                                override fun onCancelled(error: DatabaseError) {
+                                    TODO("Not yet implemented")
+                                }
+                            })
                         } else {
                             Toast.makeText(this@MainActivity, "Login failed", Toast.LENGTH_LONG)
                                     .show()
