@@ -1,6 +1,7 @@
 package com.example.securityapp
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import android.widget.TextView
@@ -9,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.*
-import com.google.firebase.database.DataSnapshot
+import com.google.android.gms.common.api.Api
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.text.SimpleDateFormat
@@ -65,14 +66,16 @@ class QRCodeScanner() : AppCompatActivity() {
                 val df = SimpleDateFormat("EEE MM/dd/yyyy hh:mm.ss aa")
                 val c = Calendar.getInstance()
                 val str_time: String = df.format(c.time)
-
-
-                Toast.makeText(applicationContext,
-                    "Scan Result \n Client Code: ${it.text} \n  \"Progress saved at $str_time ", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, "Scan Result \n Client Code: ${it.text} \n  \"Progress saved at $str_time ", Toast.LENGTH_SHORT).show()
+                val code =findViewById<TextView>(R.id.textView) as TextView
+                val intent = Intent(this, ClientInfo::class.java)
                 val textView = findViewById(R.id.textView) as TextView
                 val MyDateText = findViewById(R.id.MyDateText) as TextView
                 MyDateText.text = "$str_time"
                 textView.text = it.text
+                intent.putExtra("result", code.text)
+                startActivity(intent)
+
             }
         }
         codeScanner.errorCallback = ErrorCallback {

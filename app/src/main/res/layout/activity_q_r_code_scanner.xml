@@ -51,7 +51,7 @@
         android:textColor="@android:color/white"
         tools:ignore="HardcodedText" />
     <TextView
-        android:id="@+id/idretrfirtname"
+        android:id="@+id/firtname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/scanner_view"
@@ -63,7 +63,7 @@
         android:textColor="@android:color/white"
         tools:ignore="HardcodedText" />
     <TextView
-        android:id="@+id/idretrlastname"
+        android:id="@+id/lastname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/scanner_view"
