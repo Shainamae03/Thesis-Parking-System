@@ -4,14 +4,14 @@ import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.os.Handler
+import android.view.WindowManager
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.budiyev.android.codescanner.*
-import com.google.android.gms.common.api.Api
-import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import java.text.SimpleDateFormat
 import java.util.*
@@ -22,8 +22,7 @@ private const val CAMERA_REQUEST_CODE = 101
 class QRCodeScanner() : AppCompatActivity() {
 
 
-    private var mFirebaseDatabase: DatabaseReference? = null
-    private var mFirebaseInstance: FirebaseDatabase? = null
+
 
 
     private lateinit var codeScanner: CodeScanner
@@ -32,7 +31,10 @@ class QRCodeScanner() : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_q_r_code_scanner)
-
+        getWindow().setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar()?.hide();
 
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) ==
@@ -67,13 +69,15 @@ class QRCodeScanner() : AppCompatActivity() {
                 val c = Calendar.getInstance()
                 val str_time: String = df.format(c.time)
                 Toast.makeText(applicationContext, "Scan Result \n Client Code: ${it.text} \n  \"Progress saved at $str_time ", Toast.LENGTH_SHORT).show()
-                val code =findViewById<TextView>(R.id.textView) as TextView
+                val code : String = "$it"
+                val code2: String = "$str_time"
                 val intent = Intent(this, ClientInfo::class.java)
                 val textView = findViewById(R.id.textView) as TextView
                 val MyDateText = findViewById(R.id.MyDateText) as TextView
                 MyDateText.text = "$str_time"
                 textView.text = it.text
-                intent.putExtra("result", code.text)
+                intent.putExtra("result", code)
+                intent.putExtra("result2", code2)
                 startActivity(intent)
 
             }
@@ -91,9 +95,9 @@ class QRCodeScanner() : AppCompatActivity() {
     }
 
     override fun onRequestPermissionsResult(
-        requestCode: Int,
-        permissions: Array<out String>,
-        grantResults: IntArray
+            requestCode: Int,
+            permissions: Array<out String>,
+            grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 123) {

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/firtname"
@@ -14,7 +13,7 @@
         android:textSize="12sp" />
 
     <TextView
-        android:id="@+id/LogStat"
+        android:id="@+id/department"
         android:layout_width="19dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -22,35 +21,12 @@
         android:textColor="@color/black"
         android:textSize="12sp" />
     <TextView
+        android:id="@+id/clientcode"
         android:layout_width="10dp"
         android:layout_height="match_parent"
         android:layout_weight=".5"
         android:padding="10sp"
-        android:text="Date"
-        android:textColor="@color/black"
-        android:textSize="12sp"/>
-    <TextView
-        android:layout_width="10dp"
-        android:layout_height="match_parent"
-        android:layout_weight=".5"
-        android:padding="10sp"
-        android:text="Time"
-        android:textColor="@color/black"
-        android:textSize="12sp"/>
-    <TextView
-        android:layout_width="10dp"
-        android:layout_height="match_parent"
-        android:layout_weight=".5"
-        android:padding="10sp"
-        android:text="Gate"
-        android:textColor="@color/black"
-        android:textSize="12sp"/>
-    <TextView
-        android:layout_width="10dp"
-        android:layout_height="match_parent"
-        android:layout_weight=".5"
-        android:padding="10sp"
-        android:text="SGID"
+        android:text="Client Code"
         android:textColor="@color/black"
         android:textSize="12sp"/>
 

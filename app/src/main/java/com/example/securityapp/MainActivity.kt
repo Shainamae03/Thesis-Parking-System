@@ -58,7 +58,7 @@ class MainActivity : AppCompatActivity() {
 
                             databaseReferenceSecu?.addValueEventListener(object : ValueEventListener {
                                 override fun onDataChange(snapshot: DataSnapshot) {
-                                    val ClientDb = snapshot.child("as").value.toString()
+                                    val ClientDb = snapshot.child("As").value.toString()
                                     if (ClientDb.equals("Security")) {
                                         startActivity(Intent(this@MainActivity, Menu::class.java))
 

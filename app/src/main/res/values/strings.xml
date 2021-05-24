@@ -9,8 +9,8 @@
     <string name="email"/>
     <string name="deptcode"/>
     <string name="col1">LogID</string>
-    <string name="col2">Date</string>
-    <string name="col3">Time</string>
+    <string name="col2">Department</string>
+    <string name="col3">ClientCode</string>
     <string name="col4">Client</string>
     <string name="col5">Gate</string>
     <string name="col6">Transit</string>

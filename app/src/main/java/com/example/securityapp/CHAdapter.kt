@@ -19,8 +19,9 @@ class CHAdapter(private val clientlog:ArrayList<User>) : RecyclerView.Adapter<CH
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentitem = clientlog[position]
-        holder.firtname.text = currentitem.firtname
+        holder.col1.text = currentitem.firtname
         holder.col2.text = currentitem.department
+        holder.col3.text = currentitem.clientcode
     }
 
     override fun getItemCount(): Int {
@@ -30,7 +31,8 @@ class CHAdapter(private val clientlog:ArrayList<User>) : RecyclerView.Adapter<CH
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 
-        val firtname : TextView = itemView.findViewById(R.id.firtname)
-        val col2 : TextView = itemView.findViewById(R.id.LogStat)
+        val col1 : TextView = itemView.findViewById(R.id.firtname)
+        val col2 : TextView = itemView.findViewById(R.id.department)
+        val col3 : TextView = itemView.findViewById(R.id.clientcode)
     }
 }
