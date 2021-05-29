@@ -64,15 +64,13 @@ class QRCodeScanner() : AppCompatActivity() {
                 val c = Calendar.getInstance()
                 val str_time: String = df.format(c.time)
                 Toast.makeText(applicationContext, "Scan Result \n Client Code: ${it.text} \n  \"Progress saved at $str_time ", Toast.LENGTH_SHORT).show()
-                val code : String = "$it"
-                val code2: String = "$str_time"
                 val intent = Intent(this, ClientInfo::class.java)
                 val textView = findViewById(R.id.textView) as TextView
-                val MyDateText = findViewById(R.id.MyDateText) as TextView
+                val MyDateText= findViewById(R.id.MyDateText) as TextView
                 MyDateText.text = "$str_time"
                 textView.text = it.text
-                intent.putExtra("result", code)
-                intent.putExtra("result2", code2)
+                intent.putExtra("result", "${it.text}")
+                intent.putExtra("result2", "${str_time}")
                 startActivity(intent)
 
             }

@@ -15,20 +15,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import com.google.zxing.BarcodeFormat
-import com.google.zxing.WriterException
-import com.google.zxing.qrcode.QRCodeWriter
-import org.w3c.dom.Text
-
 
 class ClientInfo : AppCompatActivity() {
 
 
-    private lateinit var result: DatabaseReference
-    private lateinit var clientlog: RecyclerView
-    private lateinit var clientArrayList: ArrayList<User>
     lateinit var auth: FirebaseAuth
-    var databaseReference: DatabaseReference? = result
+    var databaseReference: DatabaseReference? = null
     var database: FirebaseDatabase? = null
 
     private lateinit var ivQRCode: ImageView
@@ -40,57 +32,36 @@ class ClientInfo : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_client_info)
 
+        auth = FirebaseAuth.getInstance()
+        database = FirebaseDatabase.getInstance()
+        databaseReference = database?.reference!!.child("ClientDb")
 
-        getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN
-        );
-        getSupportActionBar()?.hide();
-
-        var intent = intent
+        val intent = intent
         val capt = intent.getStringExtra("result")
         val capt2 = intent.getStringExtra("result2")
-        val result2_tv = findViewById<TextView>(R.id.data2)
+        val result2_tv = findViewById<TextView>(R.id.MyDateText)
         result2_tv.text = capt2
-        val result_tv = findViewById<TextView>(R.id.data)
+        val result_tv = findViewById<TextView>(R.id.textView)
         result_tv.text = capt
+        val  result = auth.currentUser
+        val userreference = databaseReference?.child(result?.uid!!)
+        val clientcode = findViewById<TextView>(R.id.clientcode)
+        val firtname = findViewById<TextView>(R.id.firtname)
+        val department = findViewById<TextView>(R.id.department)
 
-
-        clientlog = findViewById(R.id.clientlog)
-        clientlog.layoutManager = LinearLayoutManager(this, )
-        clientlog.setHasFixedSize(true)
-
-
-        clientArrayList = arrayListOf()
-        getUserData()
-
-    }
-
-    private fun getUserData() {
-        result = FirebaseDatabase.getInstance().getReference("ClientDb")
-        result.addValueEventListener(object : ValueEventListener {
-
-
+        userreference?.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                if (snapshot.exists()) {
-                    for (userSnapshot in snapshot.children) {
-                        val user = userSnapshot.getValue(User::class.java)
-                        clientArrayList.add(user!!)
-                    }
-                }
-                clientlog.adapter = CHAdapter(clientArrayList)
+
+                clientcode.text = snapshot.child("clientcode").value.toString()
+               firtname.text = snapshot.child("firtname").value.toString()
+                department.text = snapshot.child("department").value.toString()
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+
             }
-
         })
+
     }
+
 }
-
-
-
-
-
-
