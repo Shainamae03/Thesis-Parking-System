@@ -1,20 +1,18 @@
 package com.example.securityapp
 
 import android.annotation.TargetApi
-import android.graphics.Bitmap
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.view.WindowManager
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.FirebaseError
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
+import com.google.firebase.database.core.Tag
+
 
 class ClientInfo : AppCompatActivity() {
 
@@ -43,25 +41,12 @@ class ClientInfo : AppCompatActivity() {
         result2_tv.text = capt2
         val result_tv = findViewById<TextView>(R.id.textView)
         result_tv.text = capt
-        val  result = auth.currentUser
+        val result = auth.currentUser
         val userreference = databaseReference?.child(result?.uid!!)
         val clientcode = findViewById<TextView>(R.id.clientcode)
         val firtname = findViewById<TextView>(R.id.firtname)
         val department = findViewById<TextView>(R.id.department)
 
-        userreference?.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-
-                clientcode.text = snapshot.child("clientcode").value.toString()
-               firtname.text = snapshot.child("firtname").value.toString()
-                department.text = snapshot.child("department").value.toString()
-            }
-
-            override fun onCancelled(error: DatabaseError) {
-
-            }
-        })
 
     }
-
 }
