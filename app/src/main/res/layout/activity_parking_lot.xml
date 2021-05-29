@@ -51,7 +51,6 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/claw"
                         android:layout_marginTop="12dp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -82,7 +81,6 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/cn"
                         android:layout_marginTop="12dp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -142,7 +140,6 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/chtm"
                         android:layout_marginTop="12dp"/>
                     <TextView
                         android:layout_width="wrap_content"
@@ -203,7 +200,6 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_marginTop="12dp"
-                        android:src="@drawable/logomakr_6fmgxh"
                         android:layout_gravity="left"/>
 
                 </LinearLayout>
