@@ -2,6 +2,6 @@ package com.example.securityapp
 
 import java.text.SimpleDateFormat
 
-data class User(var clientcode : String?=null , var branch : String?=null  , var department :
-String?=null   , var firtname : String?=null   , var lastname : String?=null , var dateFormat: SimpleDateFormat? = null )
+data class User(var clientcode : String , var branch : String , var department :
+String   , var firtname : String  , var lastname : String , var dateFormat: SimpleDateFormat )
 

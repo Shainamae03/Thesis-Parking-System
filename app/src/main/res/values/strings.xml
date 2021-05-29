@@ -1,13 +1,19 @@
 <resources>
     <string name="app_name">Security App</string>
-    <string name="Secu_Code" />
-    <string name="Secu_Name" />
-    <string name="clientcode"/>
-    <string name="firtname"/>
-    <string name="lastname"/>
-    <string name="department"/>
-    <string name="email"/>
-    <string name="deptcode"/>
+    <string name="textView" />
+    <string name="MyDateText" />
+    <string name="clientcode" />
+    <string name="firtname" > firtname</string>
+    <string name="data">clientcode</string>
+    <string name="data2"></string>
+    <string name="department" > department </string>
+    <string name="email" > email </string>
+    <string name="deptcode" />
+    <string name="todo1">TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="my_dashboard">My dashboard</string>
+    <string name="home">Home</string>
     <string name="col1">LogID</string>
     <string name="col2">Department</string>
     <string name="col3">ClientCode</string>
@@ -22,4 +28,5 @@
     <string name="row1Transit">Entry</string>
     <string name="back2_button" />
     <string name="generateID" />
+    <string name="firstname" />
 </resources>

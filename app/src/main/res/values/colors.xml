@@ -12,4 +12,6 @@
     <color name="gold">#DAA520</color>
     <color name="violet">#9932CC</color>
     <color name="grey">#808080</color>
+    <color name="red">#DC143C</color>
+    <color name="green">#00FF00</color>
 </resources>

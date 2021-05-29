@@ -26,15 +26,10 @@ class QRCodeScanner() : AppCompatActivity() {
 
 
     private lateinit var codeScanner: CodeScanner
-    private lateinit var tv: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_q_r_code_scanner)
-        getWindow().setFlags(
-                WindowManager.LayoutParams.FLAG_FULLSCREEN,
-                WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getSupportActionBar()?.hide();
 
 
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) ==
@@ -98,6 +93,7 @@ class QRCodeScanner() : AppCompatActivity() {
             requestCode: Int,
             permissions: Array<out String>,
             grantResults: IntArray
+
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == 123) {
@@ -123,5 +119,8 @@ class QRCodeScanner() : AppCompatActivity() {
             codeScanner?.releaseResources()
         }
         super.onPause()
+
     }
 }
+
+

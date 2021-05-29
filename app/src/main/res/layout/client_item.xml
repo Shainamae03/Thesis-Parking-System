@@ -5,7 +5,7 @@
 
     <TextView
         android:id="@+id/firtname"
-        android:layout_width="10dp"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_weight=".2"
         android:padding="10sp"

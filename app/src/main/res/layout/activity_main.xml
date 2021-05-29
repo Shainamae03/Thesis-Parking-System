@@ -81,9 +81,9 @@
             android:id="@+id/login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/button"
+            android:background="@drawable/btn_bg_by_lever"
             android:text="Log in"
-            android:textColor="@color/black" />
+            android:textColor="@color/white" />
 
 
     </LinearLayout>

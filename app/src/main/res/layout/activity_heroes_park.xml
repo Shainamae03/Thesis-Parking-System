@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HeroesPark"
+    android:background="@drawable/hp"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="40dp"
+        android:id="@+id/backimg"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/back"/>
+
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot1"
+        android:layout_marginTop="20dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:id="@+id/myImageViewText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:gravity="center"
+            android:text="Slot 1"
+            android:textColor="#000000"
+            android:textAlignment="center"/>
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot2"
+        android:layout_marginTop="7dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:gravity="center"
+            android:text="Slot 2"
+            android:textColor="#000000"
+            android:textAlignment="center"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot3"
+        android:layout_marginTop="7dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:gravity="center"
+            android:text="Slot 3"
+            android:textColor="#000000"
+            android:textAlignment="center"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot4"
+        android:layout_marginTop="7dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="3dp"
+            android:gravity="center"
+            android:text="Slot 4"
+            android:textColor="#000000"
+            android:textAlignment="center"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot5"
+        android:layout_marginTop="7dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:gravity="center"
+            android:text="Slot 5"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot6"
+        android:layout_marginTop="7dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:gravity="center"
+            android:text="Slot 6"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot7"
+        android:layout_marginTop="7dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:gravity="center"
+            android:text="Slot 7"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot8"
+        android:layout_marginTop="7dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:gravity="center"
+            android:text="Slot 8"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot9"
+        android:layout_marginTop="7dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:gravity="center"
+            android:text="Slot 9"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot10"
+        android:layout_marginTop="7dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:gravity="center"
+            android:text="Slot 10"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot11"
+        android:layout_marginTop="7dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:gravity="center"
+            android:text="Slot 11"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot12"
+        android:layout_marginTop="7dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:gravity="center"
+            android:text="Slot 12"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginLeft="80dp"
+        android:id="@+id/slot13"
+        android:layout_marginTop="7dp"
+        android:layout_width="50dp"
+        android:layout_height="24dp"
+        android:background="@drawable/rectangle">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            android:gravity="center"
+            android:text="Slot 13"
+            android:textAlignment="center"
+            android:textColor="#000000" />
+    </RelativeLayout>
+</LinearLayout>

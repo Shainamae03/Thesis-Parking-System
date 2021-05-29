@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ParkingLot"
-    android:background="@drawable/bg1">
+    tools:context=".ParkingLogs"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,10 +15,10 @@
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SECURITY"
+            android:text="PARKING LOGS"
             android:textSize="30sp"
-            android:fontFamily="@font/prompt_extrabold"
-            android:textColor="@color/white"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/black"
             android:layout_gravity="center_horizontal"
             android:textAlignment="center"/>
 
@@ -34,12 +34,12 @@
             android:columnOrderPreserved="false">
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/claw"
+                android:id="@+id/parkingdb"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="#CC808A9F"
-                app:cardCornerRadius="38dp"
+                app:cardBackgroundColor="@color/maroon"
                 android:layout_margin="10dp">
 
                 <LinearLayout
@@ -51,12 +51,12 @@
                     <ImageView
                         android:layout_width="100dp"
                         android:layout_height="100dp"
-                        android:src="@drawable/claw"
+                        android:src="@drawable/ic_launcher_foreground"
                         android:layout_marginTop="12dp"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="CLAW"
+                        android:text="PARKING DB"
                         android:textColor="@color/white"
                         android:textSize="15sp"
                         android:layout_marginTop="5dp"/>
@@ -64,43 +64,12 @@
 
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
-                android:id="@+id/cn"
+                android:id="@+id/logs"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
-
+                app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="#CC808A9F"
-                app:cardCornerRadius="38dp"
-                android:layout_margin="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/cn"
-                        android:layout_marginTop="12dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="CON"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:layout_marginTop="5dp"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/hp"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:cardElevation="5dp"
-                app:cardBackgroundColor="#CC808A9F"
-                app:cardCornerRadius="38dp"
+                app:cardBackgroundColor="@color/maroon"
                 android:layout_margin="10dp">
 
                 <LinearLayout
@@ -117,50 +86,22 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Heroes Park"
+                        android:text="PARKING LOGS"
                         android:textColor="@color/white"
                         android:textSize="20sp"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
+
+
             <androidx.cardview.widget.CardView
-                android:id="@+id/che"
+                android:id="@+id/history"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="5dp"
-                app:cardBackgroundColor="#CC808A9F"
-                app:cardCornerRadius="38dp"
-                android:layout_margin="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:gravity="center">
-
-                    <ImageView
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:src="@drawable/chtm"
-                        android:layout_marginTop="12dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="CHE"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        android:layout_marginTop="5dp"/>
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/parkinglogs"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                app:cardElevation="5dp"
-                app:cardBackgroundColor="#CC808A9F"
-                app:cardCornerRadius="38dp"
+                app:cardBackgroundColor="@color/maroon"
                 android:layout_margin="10dp">
 
                 <LinearLayout
@@ -177,9 +118,9 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Parking logs"
+                        android:text="parking lot history"
                         android:textColor="@color/white"
-                        android:textSize="20sp"
+                        android:textSize="16sp"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
