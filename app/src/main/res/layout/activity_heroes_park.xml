@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HeroesPark"
-    android:background="@drawable/hp"
     android:orientation="vertical"
     android:padding="20dp">
 

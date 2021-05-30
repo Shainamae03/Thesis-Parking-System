@@ -124,7 +124,6 @@
                 tools:ignore="UselessLeaf">
                 <ImageView
                     android:layout_width="150dp"
-                    android:src="@drawable/guest"
                     android:layout_gravity="center"
                     android:layout_height="150dp"/>
                 <TextView

@@ -144,7 +144,6 @@
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_marginTop="12dp"
-                        android:src="@drawable/logomakr_6fmgxh"
                         android:layout_gravity="left"/>
 
                 </LinearLayout>

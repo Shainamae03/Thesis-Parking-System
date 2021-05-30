@@ -20,15 +20,7 @@ class ParkingLaw : AppCompatActivity() {
 
         val s1 = findViewById(R.id.s1) as Button;
 
-         s1.setOnClickListener {
-            if(s2==2){
-                s1.setBackgroundResource(R.drawable.rectangle);
-                    s2 = 1
-            } else if(s2==1){
-                s1.setBackgroundResource(R.drawable.ic_car_small);
-                s2 =2;
-            }
-        }
+
 
     }
 }

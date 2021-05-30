@@ -10,7 +10,7 @@
     <com.budiyev.android.codescanner.CodeScannerView
         android:id="@+id/scanner_view"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="600dp"
         android:background="@drawable/bg1"
         app:autoFocusButtonColor="@android:color/white"
         app:autoFocusButtonVisible="true"
@@ -28,52 +28,17 @@
         tools:layout_editor_absoluteY="-320dp" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/code"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
         android:layout_below="@+id/scanner_view"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="20dp"
-        android:text="Scan Something"
-        android:textColor="@android:color/white"
-        tools:ignore="HardcodedText" />
-
-    <TextView
-        android:id="@+id/MyDateText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/scanner_view"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="50dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="20dp"
-        android:text="Date and Time"
-        android:textColor="@android:color/white"
-        tools:ignore="HardcodedText" />
-    <TextView
-        android:id="@+id/firtname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/scanner_view"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="80dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="20dp"
-        android:text="Firstname"
-        android:textColor="@android:color/white"
-        tools:ignore="HardcodedText" />
-    <TextView
-        android:id="@+id/lastname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/scanner_view"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="110dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="20dp"
-        android:text="Lastname"
-        android:textColor="@android:color/white"
-        tools:ignore="HardcodedText" />
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginBottom="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </RelativeLayout>
