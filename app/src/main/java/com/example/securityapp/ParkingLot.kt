@@ -36,8 +36,14 @@ class ParkingLot : AppCompatActivity() {
 
         val con = findViewById<CardView>(R.id.cn)
         con.setOnClickListener {
-            val intent = Intent(this, ConParking::class.java)
-            startActivity(intent)
+            val extras = intent.extras
+            if (extras != null) {
+                val value = extras.getString("key")
+                val passval = value
+                val i = Intent(this@ParkingLot, ConParking::class.java)
+                i.putExtra("passkey", passval)
+                startActivity(i)
+            }
         }
         val hp = findViewById<CardView>(R.id.hp)
         hp.setOnClickListener {
