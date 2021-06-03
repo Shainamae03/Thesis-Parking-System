@@ -1,44 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/bg1"
-    tools:context=".QRCodeScanner">
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <com.budiyev.android.codescanner.CodeScannerView
-        android:id="@+id/scanner_view"
-        android:layout_width="match_parent"
-        android:layout_height="600dp"
-        android:background="@drawable/bg1"
-        app:autoFocusButtonColor="@android:color/white"
-        app:autoFocusButtonVisible="true"
-        app:flashButtonColor="@android:color/white"
-        app:flashButtonVisible="true"
-        app:frameAspectRatioHeight="1"
-        app:frameAspectRatioWidth="1"
-        app:frameColor="@color/white"
-        app:frameCornersRadius="0dp"
-        app:frameCornersSize="20dp"
-        app:frameSize="0.75"
-        app:frameThickness="4dp"
-        app:maskColor="#6B000000"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="-320dp" />
+    <RelativeLayout tools:context=".QRCodeScanner" android:background="@drawable/bg1"
+    android:layout_height="match_parent" android:layout_width="match_parent" xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/code"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@+id/scanner_view"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginTop="34dp"
-        android:layout_marginBottom="120dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    <com.budiyev.android.codescanner.CodeScannerView android:background="@drawable/bg1" android:layout_height="400dp" android:layout_width="match_parent" tools:layout_editor_absoluteY="-320dp" tools:layout_editor_absoluteX="42dp" app:maskColor="#6B000000" app:frameThickness="4dp" app:frameSize="0.75" app:frameCornersSize="20dp" app:frameCornersRadius="0dp" app:frameColor="@color/white" app:frameAspectRatioWidth="1" app:frameAspectRatioHeight="1" app:flashButtonVisible="true" app:flashButtonColor="@android:color/white" app:autoFocusButtonVisible="true" app:autoFocusButtonColor="@android:color/white" android:id="@+id/scanner_view"/>
 
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView" tools:ignore="HardcodedText" android:textColor="@android:color/white" android:text="Scan Something" android:layout_margin="20dp" android:layout_centerHorizontal="true" android:layout_below="@+id/scanner_view"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/MyDateText" tools:ignore="HardcodedText" android:textColor="@android:color/white" android:text="Date and Time" android:layout_margin="50dp" android:layout_centerHorizontal="true" android:layout_below="@+id/scanner_view" android:layout_marginBottom="20dp" android:layout_marginTop="70dp"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/firtname" tools:ignore="HardcodedText" android:textColor="@android:color/white" android:text="Firstname" android:layout_margin="80dp" android:layout_centerHorizontal="true" android:layout_below="@+id/scanner_view" android:layout_marginBottom="20dp" android:layout_marginTop="70dp"/>
+
+    <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/lastname" tools:ignore="HardcodedText" android:textColor="@android:color/white" android:text="Lastname" android:layout_margin="110dp" android:layout_centerHorizontal="true" android:layout_below="@+id/scanner_view" android:layout_marginBottom="20dp" android:layout_marginTop="70dp"/>
 
 </RelativeLayout>

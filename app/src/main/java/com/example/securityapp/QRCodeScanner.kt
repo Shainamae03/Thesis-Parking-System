@@ -69,62 +69,70 @@ class QRCodeScanner() : AppCompatActivity() {
 
 
             runOnUiThread {
-
                 val df = SimpleDateFormat("EEE MM/dd/yyyy hh:mm.ss aa")
                 val c = Calendar.getInstance()
                 val str_time: String = df.format(c.time)
-                val rootRef = FirebaseDatabase.getInstance().reference
-                val ordersRef = rootRef.child("ClientDb").orderByChild("clientcode").equalTo(it.text)
-                val valueEventListener = object : ValueEventListener {
-                    override fun onDataChange(dataSnapshot: DataSnapshot) {
-                        for (ds in dataSnapshot.children) {
-                            val username = ds.child("firtname").getValue(String::class.java)
-                            val plnum = ds.child("plateNumber").getValue(String::class.java)
-
-                            val alertDialog = AlertDialog.Builder(this@QRCodeScanner)
-                            alertDialog.setCancelable(false)
-                            alertDialog.setMessage("Client Code: ${it.text} \n Name: $username \n Plate no.: $plnum \n Progress saved at $str_time")
-                            alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
-
-                            })
-                            alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
-                                dialog.cancel()
-                            })
-                            val alert = alertDialog.create();
-                            alert.setTitle("Accept Client?")
-                            alert.show()
-
-                        }
-                    }
-
-                    override fun onCancelled(databaseError: DatabaseError) {
-                        TODO("Not yet implemented") //Don't ignore errors!
-                    }
-                }
-                ordersRef.addListenerForSingleValueEvent(valueEventListener)
+           //     val rootRef = FirebaseDatabase.getInstance().reference
+         //       val ordersRef = rootRef.child("ClientDb").orderByChild("clientcode").equalTo(it.text)
 
 
-//                val code : String = "$it"
-//                val code2: String = "$str_time"
-//                val intent = Intent(this, ClientInfo::class.java)
-//                val textView = findViewById(R.id.textView) as TextView
-//                val MyDateText = findViewById(R.id.MyDateText) as TextView
-//                MyDateText.text = "$str_time"
-//                textView.text = it.text
-//                intent.putExtra("result", code)
-//                intent.putExtra("result2", code2)
-//                startActivity(intent)
+
+
+              //  val valueEventListener = object : ValueEventListener {
+                ///    override fun onDataChange(dataSnapshot: DataSnapshot) {
+                //        for (ds in dataSnapshot.children) {
+                //            val username = ds.child("firtname").getValue(String::class.java )
+              //              val plnum = ds.child("plateNumber").getValue(String::class.java)
+
+                     //       val alertDialog = AlertDialog.Builder(this@QRCodeScanner)
+
+               //             alertDialog.setCancelable(false)
+              //              alertDialog.setMessage("Client Code: ${it.text} \n Name: $username \n Plate no.: $plnum \n Progress saved at $str_time")
+            //                alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
+
+
+
+
+                 //           })
+             //  /             alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
+                //                dialog.cancel()
+              //              })
+            //                val alert = alertDialog.create();
+          //                  alert.setTitle("Accept Client?")
+         //                   alert.show()
+
+                   //     }
+            //        }
+//
+          //          override fun onCancelled(databaseError: DatabaseError) {
+        //                TODO("Not yet implemented") //Don't ignore errors!
+        //            }
+      //          }
+           //     ordersRef.addListenerForSingleValueEvent(valueEventListener)
+
+
+              val code : String = "$it"
+               val code2: String = "$str_time"
+               val intent = Intent(this, ClientInfo::class.java)
+                val textView = findViewById(R.id.textView) as TextView
+                val MyDateText = findViewById(R.id.MyDateText) as TextView
+            Toast.makeText(applicationContext, "Scan Result \n Client Code: ${it.text} \n  \"Progress saved at $str_time ", Toast.LENGTH_SHORT).show()
+             MyDateText.text = "$str_time"
+              textView.text = it.text
+                      intent.putExtra("result", code)
+             intent.putExtra("result2", code2)
+                startActivity(intent)
 
             }
         }
-        codeScanner.errorCallback = ErrorCallback {
-            runOnUiThread {
-                Toast.makeText(this, "Camera inilization Error:${it.message}", Toast.LENGTH_SHORT)
-                    .show()
+    codeScanner.errorCallback = ErrorCallback {
+           runOnUiThread {
+               Toast.makeText(this, "Camera inilization Error:${it.message}", Toast.LENGTH_SHORT)
+                   .show()
 
             }
-        }
-        scannerView.setOnClickListener {
+      }
+    scannerView.setOnClickListener {
             codeScanner.startPreview()
         }
     }

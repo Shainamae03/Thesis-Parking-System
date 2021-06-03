@@ -15,27 +15,27 @@ import java.util.Scanner
 class MainActivity : AppCompatActivity() {
 
     lateinit var authSecu: FirebaseAuth
-    var databaseReferenceSecu : DatabaseReference? = null
+    var databaseReferenceSecu: DatabaseReference? = null
     var databaseSecu: FirebaseDatabase? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView (R.layout.activity_main)
+        setContentView(R.layout.activity_main)
 
         authSecu = FirebaseAuth.getInstance()
         val currentUser = authSecu.currentUser
-        if(currentUser != null){
+        if (currentUser != null) {
             startActivity(Intent(this@MainActivity, Menu::class.java))
         }
 
         login()
     }
 
-    private fun login(){
+    private fun login() {
 
-            val secuname = findViewById(R.id.secuname) as EditText
-            val code = findViewById(R.id.code) as EditText
-            val  button = findViewById(R.id.login) as Button
+        val secuname = findViewById(R.id.secuname) as EditText
+        val code = findViewById(R.id.code) as EditText
+        val button = findViewById(R.id.login) as Button
 
         button.setOnClickListener {
             if (TextUtils.isEmpty(secuname.text.toString())) {
@@ -87,10 +87,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
 
-
-        }
-
         }
     }
-
+}
 

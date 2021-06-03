@@ -19,7 +19,7 @@ class SecurityReport : AppCompatActivity() {
             alertDialog.setCancelable(false)
             alertDialog.setMessage("Do you want to proceed?")
             alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
-                startActivity(Intent(this@SecurityReport, Notification::class.java))
+                startActivity(Intent(this@SecurityReport, Menu::class.java))
             })
             alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
                 dialog.cancel()

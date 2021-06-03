@@ -18,36 +18,6 @@
         tools:ignore="UselessParent">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/parking_space"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="8dp"
-            app:cardBackgroundColor="@android:color/transparent"
-            android:layout_columnWeight="1"
-            android:layout_rowWeight="1"
-            app:cardElevation="5dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:background="@color/grey"
-                tools:ignore="UselessLeaf">
-             <ImageView
-                 android:layout_width="150dp"
-                 android:src="@drawable/parking"
-                 android:layout_gravity="center"
-                 android:layout_height="150dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@color/white"
-                    android:text="PARKING SPACE"/>
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
             android:id="@+id/parking_log"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -72,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:layout_gravity="center"
-                    android:text="PARLKING LOG"/>
+                    android:text="PARKING LOG"/>
 
             </LinearLayout>
 
@@ -102,7 +72,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="@color/white"
-                    android:text="Parking SCANNER"/>
+                    android:text="PARKING SCANNER"/>
 
             </LinearLayout>
 
@@ -124,8 +94,10 @@
                 tools:ignore="UselessLeaf">
                 <ImageView
                     android:layout_width="150dp"
+                    android:src="@drawable/guest"
                     android:layout_gravity="center"
                     android:layout_height="150dp"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -167,8 +139,16 @@
 
         </androidx.cardview.widget.CardView>
 
+
+
     </GridLayout>
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        app:srcCompat="@drawable/guest" />
 
 
 </LinearLayout>

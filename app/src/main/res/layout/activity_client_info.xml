@@ -13,7 +13,8 @@
         android:layout_marginTop="50dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:textAllCaps="true"
+        android:text="Clientcode:" />
 
 
     <TextView
@@ -21,82 +22,54 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
-
+        android:textAllCaps="true"
+        android:text="Date/Time:" />
     <TextView
-        android:layout_margin="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CLIENT LOG"
-        android:textSize="25sp"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/black"
-        android:layout_gravity="center_horizontal"
-        android:textAlignment="center"/>
-
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:scrollbars="none"
-        android:layout_weight="1">
-        <LinearLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:orientation="vertical">
-
-            <TableLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/maroon"
-                android:layout_marginTop="20dp">
-
-                <TableRow
-                    android:background="@color/violet">
-
-                    <TextView
-                        android:layout_width="78dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight=".2"
-                        android:padding="10sp"
-                        android:text="@string/col1"
-                        android:textColor="@color/black"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight=".5"
-                        android:padding="10sp"
-                        android:text="@string/col2"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"/>
-                    <TextView
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight=".5"
-                        android:padding="10sp"
-                        android:text="@string/col3"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"/>
-                </TableRow>
-            </TableLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/clientlog"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:listitem="@layout/client_item" />
-
-
-        </LinearLayout>
-
-    </ScrollView>
-
-    <Button
-        android:id="@+id/backtohome"
+        android:id="@+id/username"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Back" />
+        android:textAllCaps="true"
+        android:text="Username" />
+    <TextView
+        android:id="@+id/plnumber"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:text="Plate NO." />
+    <TextView
+        android:id="@+id/branch"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:text="Branch:" />
+    <TextView
+        android:id="@+id/department"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:text="Department:" />
+    <TextView
+        android:id="@+id/deptcode"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:text="DeptCode:" />
+
+    <Button
+        android:id="@+id/Approve_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Approve" />
+
+    <Button
+        android:id="@+id/Deny_Btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Deny" />
 
 </LinearLayout>

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ParkingLaw"
+    android:background="@drawable/lawpark"
     android:orientation="horizontal"
     android:padding="20dp">
 
@@ -30,7 +31,6 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/s1"
-                style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="500dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="5dp"
@@ -48,10 +48,10 @@
             android:id="@+id/slot2"
             android:layout_marginTop="2dp"
             android:layout_width="50dp"
-            android:layout_height="24dp"
-            android:background="@drawable/rectangle_red">
+            android:layout_height="24dp" >
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/s2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="3dp"
