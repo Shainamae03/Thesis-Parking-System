@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SecurityApp">
-        <activity android:name=".HeroesPark"></activity>
+        <activity android:name=".AcceptClientInfo"></activity>
+        <activity android:name=".HeroesPark" />
         <activity android:name=".ConParking" />
         <activity android:name=".Che_parking" />
         <activity android:name=".ParkingLaw" />

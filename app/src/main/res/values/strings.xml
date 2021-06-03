@@ -3,11 +3,11 @@
     <string name="textView" />
     <string name="MyDateText" />
     <string name="clientcode" />
-    <string name="firtname" > firtname</string>
+    <string name="firtname"> firtname</string>
     <string name="data">clientcode</string>
     <string name="data2"></string>
-    <string name="department" > department </string>
-    <string name="email" > email </string>
+    <string name="department"> department </string>
+    <string name="email"> email </string>
     <string name="deptcode" />
     <string name="todo1">TODO</string>
     <!-- TODO: Remove or change this placeholder text -->

@@ -259,7 +259,7 @@
 
         <RelativeLayout
             android:id="@+id/slot13"
-            android:background="@drawable/rectangle"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="69.8dp">
