@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
 import androidx.cardview.widget.CardView
@@ -23,7 +24,7 @@ class GuestActivity : AppCompatActivity() {
         private fun register() {
 
             val regButton = findViewById<Button>(R.id.saveclient)
-            val backtomenu = findViewById<Button>(R.id.backtomenu)
+            val backtomenu = findViewById<ImageButton>(R.id.back)
             val f_name = findViewById<EditText>(R.id.f_name)
             val plate_no = findViewById<EditText>(R.id.plate_no)
             val remarks = findViewById<EditText>(R.id.remarks)
