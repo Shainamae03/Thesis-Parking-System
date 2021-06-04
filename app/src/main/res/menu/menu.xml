@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/park"
+        android:title="Parking Spaces"
+        android:icon="@drawable/bot_parking_space"/>
+    <item
+        android:id="@+id/logs"
+        android:title="Parking logs"
+        android:icon="@drawable/bot_parking_logs"/>
+    <item
+        android:id="@+id/scanner"
+        android:title="scanner"
+        android:icon="@drawable/bot_qr_scan"/>
+    <item
+        android:id="@+id/guest"
+        android:title="guest"
+        android:icon="@drawable/bot_guest"/>
+    <item
+        android:id="@+id/account"
+        android:title="Account"
+        android:icon="@drawable/bot_account"/>
+</menu>

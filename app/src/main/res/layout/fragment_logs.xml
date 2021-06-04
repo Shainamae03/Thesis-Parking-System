@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGS"
+        android:textSize="40sp"
+        android:fontFamily="@font/open_sans_extrabold"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center" />
+
+        <RelativeLayout
+            android:layout_marginTop="80dp"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:background="@color/teal_200"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:fontFamily="@font/open_sans_extrabold"
+                android:text="CLIENT LOGS"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/pdatabase"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:background="@color/transparent"
+                android:padding="20dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:background="@color/teal_200"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:fontFamily="@font/open_sans_extrabold"
+                android:text="PARKING LOGS"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:background="@color/transparent"
+                android:padding="20dp" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:background="@color/teal_200"
+            android:layout_gravity="center_horizontal">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="40dp"
+                android:fontFamily="@font/open_sans_extrabold"
+                android:text="GUEST LOGS"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:background="@color/transparent"
+                android:padding="20dp" />
+        </RelativeLayout>
+    </LinearLayout>
+
+</FrameLayout>

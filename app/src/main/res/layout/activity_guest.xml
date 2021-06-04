@@ -11,8 +11,19 @@
         android:layout_width="match_parent"
         tools:context=".NewClient"
         android:orientation="vertical"
-        android:background="@color/maroon">
+        android:background="@color/teal_700">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
+
+        <ImageButton
+            android:layout_marginTop="11dp"
+            android:id="@+id/back"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/ic_baseline_chevron_left_24"/>
         <TextView
             android:layout_margin="20dp"
             android:layout_width="wrap_content"
@@ -21,11 +32,11 @@
             android:textSize="30sp"
             android:fontFamily="sans-serif-black"
             android:textColor="@color/white"
-            android:layout_gravity="center_horizontal"
+            android:layout_gravity="center"
             android:textAlignment="center"/>
 
 
-
+    </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -400,17 +411,13 @@
 
 
         <Button
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/button1"
             android:layout_marginTop="15dp"
             android:id="@+id/saveclient"
-            android:layout_width="match_parent"
+            android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:text="Save Guest Informations"/>
-        <Button
-            android:layout_marginTop="15dp"
-            android:id="@+id/backtomenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Back to menu"/>
 
 
 
