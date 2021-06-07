@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_menus"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AccountFragment">
 
@@ -18,27 +19,8 @@
            android:id="@+id/headerblue"
        android:layout_width="match_parent"
        android:layout_height="280dp"
-       android:background="@color/teal_200"
-           android:fitsSystemWindows="true">
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:text="SECURITY PROFILE"
-               android:textSize="33sp"
-               android:textColor="@color/black"
-               android:fontFamily="@font/open_sans_extrabold"
-               android:layout_alignParentRight="true"
-               android:layout_marginTop="100dp"
-               android:layout_marginRight="5dp"/>
-               <ImageView
-                   android:layout_alignParentBottom="true"
-                   android:layout_width="350dp"
-                   android:layout_height="270dp"
-                   android:src="@drawable/_removal_ai__tmp_60b935381b22a"
-                   android:scaleType="centerCrop"
-                   android:layout_gravity="center|start"
-                   app:layout_collapseMode="parallax"/>
-           </RelativeLayout>
+       android:background="@drawable/bg_security_profile"
+           android:fitsSystemWindows="true"/>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

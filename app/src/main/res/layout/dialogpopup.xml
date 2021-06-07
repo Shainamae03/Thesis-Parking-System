@@ -107,6 +107,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginTop="10dp"
+        android:textColor="@color/black"
         android:text="ACCEPT"
         app:layout_constraintBottom_toTopOf="@+id/deny_button"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -117,6 +118,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end"
         android:layout_marginBottom="4dp"
+        android:textColor="@color/black"
         android:text="EXIT / DENY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

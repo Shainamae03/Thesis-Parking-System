@@ -6,123 +6,57 @@
     tools:context=".LogsFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@drawable/bg_menus">
     <TextView
+        android:id="@+id/logs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="LOGS"
-        android:textSize="40sp"
-        android:fontFamily="@font/open_sans_extrabold"
+        android:textSize="50sp"
+        android:fontFamily="@font/bitter_bold"
         android:textColor="@color/black"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         android:textAlignment="center" />
 
-        <RelativeLayout
-            android:layout_marginTop="80dp"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:background="@color/teal_200"
-            android:layout_gravity="center_horizontal">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="40dp"
-                android:fontFamily="@font/open_sans_extrabold"
-                android:text="CLIENT LOGS"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <Button
-                android:id="@+id/pdatabase"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="0dp"
+            <ImageButton
+                android:id="@+id/client_logs"
+                android:layout_width="350dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:layout_below="@+id/logs"
                 android:background="@color/transparent"
-                android:padding="20dp" />
-        </RelativeLayout>
-        <RelativeLayout
+                android:src="@drawable/button_client_logs"
+                android:scaleType="fitCenter"/>
+
+
+            <ImageButton
+                android:id="@+id/parking_logs"
+                android:layout_width="350dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/client_logs"
+                android:background="@color/transparent"
+                android:src="@drawable/button_parking_logs"
+                android:scaleType="fitCenter"/>
+
+
+        <ImageButton
+            android:id="@+id/guest_logs"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:background="@color/teal_200"
-            android:layout_gravity="center_horizontal">
+            android:layout_below="@+id/parking_logs"
+            android:background="@color/transparent"
+            android:src="@drawable/button_guest_logs"
+            android:scaleType="fitCenter"/>
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="40dp"
-                android:fontFamily="@font/open_sans_extrabold"
-                android:text="PARKING LOGS"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="0dp"
-                android:background="@color/transparent"
-                android:padding="20dp" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:background="@color/teal_200"
-            android:layout_gravity="center_horizontal">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="40dp"
-                android:fontFamily="@font/open_sans_extrabold"
-                android:text="GUEST LOGS"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="0dp"
-                android:background="@color/transparent"
-                android:padding="20dp" />
-        </RelativeLayout>
-    </LinearLayout>
+    </RelativeLayout>
 
 </FrameLayout>

@@ -6,27 +6,24 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:orientation="vertical"
-    android:background="@drawable/bg1"
+    android:background="@drawable/bg_login"
     android:padding="20dp">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="30dp"
-        android:text="SECURITY PERSONNEL"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        android:textStyle="bold" />
 
-    <LinearLayout
+    <RelativeLayout
 
         android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="5dp"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ic_fomics"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="70dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_fomics"
+            android:scaleType="fitCenter"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/Secu_Name"
@@ -34,6 +31,8 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:hint="Email"
+            android:layout_below="@id/ic_fomics"
+            android:layout_marginTop="40dp"
             app:hintTextColor="@color/black"
             app:startIconDrawable="@drawable/person">
 
@@ -42,17 +41,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:inputType="textEmailAddress"
-                android:background="@drawable/textbox"
                 android:maxLength="20"/>
 
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:hint="Password"
+            android:layout_below="@+id/Secu_Name"
             app:passwordToggleEnabled="true"
             app:hintTextColor="@color/black"
             app:startIconDrawable="@drawable/password">
@@ -61,32 +61,46 @@
                 android:id="@+id/code"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/textbox"
                 android:inputType="textPassword"
                 android:maxLength="12" />
         </com.google.android.material.textfield.TextInputLayout>
 
-    </LinearLayout>
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:orientation="vertical"
-        android:padding="20dp">
-
+        <ImageButton
+            android:id="@+id/login"
+            android:layout_width="250dp"
+            android:layout_height="50dp"
+            android:src="@drawable/button_login"
+            android:scaleType="fitCenter"
+            android:background="@color/transparent"
+            android:layout_below="@+id/forgotpass"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"/>
 
         <Button
-            android:id="@+id/login"
-            android:layout_width="match_parent"
+            android:id="@+id/forgotpass"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_bg_by_lever"
-            android:text="Log in"
-            android:textColor="@color/white" />
+            android:layout_below="@+id/password"
+            android:layout_alignParentRight="true"
+            android:background="@color/transparent"
+            android:textColor="@color/black"
+            android:textSize="10dp"
+            android:text="Forgot Password?" />
+
+        <ImageButton
+            android:id="@+id/cancel"
+            android:layout_width="50dp"
+            android:layout_height="20dp"
+            android:src="@drawable/Cancel_black"
+            android:scaleType="fitCenter"
+            android:background="@color/transparent"
+            android:layout_below="@+id/login"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"/>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
 
