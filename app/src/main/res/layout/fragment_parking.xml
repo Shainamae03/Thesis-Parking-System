@@ -3,18 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ParkingFragment">
+    tools:context=".ParkingFragment"
+    android:background="@drawable/bg_menus">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Parking Lots"
-            android:textSize="40sp"
+            android:textSize="50dp"
             android:fontFamily="@font/open_sans_extrabold"
             android:textColor="@color/black"
             android:layout_marginTop="20dp"
@@ -25,276 +28,103 @@
         <HorizontalScrollView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scrollbars="none">
+            android:scrollbars="none"
+            android:background="@color/transparent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
-                android:padding="20dp"
-                android:background="#F8F5F5">
+                android:background="@color/transparent">
 
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:background="@drawable/parkingcv"
+                    android:layout_height="250dp"
                     android:elevation="10dp">
 
-                    <Button
-                        android:id="@+id/claw"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentBottom="true"
-                        android:layout_marginBottom="0dp"
-                        android:background="@color/transparent"
-                        android:padding="20dp"
-                        android:layout_alignParentTop="true" />
-                    <ImageView
-                        android:layout_marginTop="10dp"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:src="@drawable/claw"
-                        android:layout_centerHorizontal="true"/>
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <ImageButton
+                        android:id="@+id/CLAW"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:text="CLAW"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="20dp"
-                        android:textColor="#0077B6"
-                        android:fontFamily="@font/open_sans_extrabold"/>
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/button_claw"
+                        android:scaleType="centerCrop"
+                        android:background="@color/transparent"/>
+
+                    <ImageButton
+                        android:id="@+id/CoN"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/button_con"
+                        android:scaleType="centerCrop"
+                        android:layout_toRightOf="@+id/CLAW"
+                        android:background="@color/transparent"/>
+
+                    <ImageButton
+                        android:id="@+id/CHTM"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/button_chtm"
+                        android:scaleType="centerCrop"
+                        android:layout_toRightOf="@+id/CoN"
+                        android:background="@color/transparent"/>
+
+                    <ImageButton
+                        android:id="@+id/Marcelo"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/button_marcelo"
+                        android:scaleType="centerCrop"
+                        android:layout_toRightOf="@+id/CHTM"
+                        android:background="@color/transparent"/>
+
+
 
                 </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:background="@drawable/parkingcv"
-                    android:layout_marginLeft="12dp"
-                    android:elevation="10dp">
 
-                    <Button
-                        android:id="@+id/chtm"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentBottom="true"
-                        android:background="@color/transparent"
-                        android:padding="20dp"
-                        android:layout_alignParentTop="true"/>
-                    <ImageView
-                        android:layout_marginTop="10dp"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:src="@drawable/chtm"
-                        android:layout_centerHorizontal="true"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="CHTM"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="20dp"
-                        android:textColor="#0077B6"
-                        android:fontFamily="@font/open_sans_extrabold"/>
-
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:background="@drawable/parkingcv"
-                    android:layout_marginLeft="12dp"
-                    android:elevation="10dp">
-
-                    <Button
-                        android:id="@+id/cn"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentBottom="true"
-                        android:background="@color/transparent"
-                        android:padding="20dp" />
-                    <ImageView
-                        android:layout_marginTop="10dp"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:src="@drawable/cn"
-                        android:layout_centerHorizontal="true"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="CN"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="20dp"
-                        android:textColor="#0077B6"
-                        android:fontFamily="@font/open_sans_extrabold"/>
-
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="130dp"
-                    android:background="@drawable/parkingcv"
-                    android:layout_marginLeft="12dp"
-                    android:elevation="10dp">
-
-                    <Button
-                        android:id="@+id/hp"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentBottom="true"
-                        android:background="@color/transparent"
-                        android:padding="20dp" />
-                    <ImageView
-                        android:layout_marginTop="10dp"
-                        android:layout_width="75dp"
-                        android:layout_height="75dp"
-                        android:src="@drawable/marcelo_removebg_preview"
-                        android:layout_centerHorizontal="true"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="HP"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginBottom="20dp"
-                        android:textColor="#0077B6"
-                        android:fontFamily="@font/open_sans_extrabold"/>
-
-                </RelativeLayout>
 
 
             </LinearLayout>
 
         </HorizontalScrollView>
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:orientation="vertical"
-            android:padding="20dp">
+            android:orientation="vertical">
 
 
             <TextView
+                android:id="@+id/parking_monitoring"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Parking Monitoring"
-                android:textSize="25sp"
+                android:textSize="30dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/open_sans_extrabold"
                 android:textColor="@color/black"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="15dp"
                 android:textAlignment="center"/>
 
 
-            <RelativeLayout
-                android:layout_marginTop="20dp"
+
+            <ImageButton
+                android:id="@+id/parking_logs"
                 android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:background="@drawable/parkinglotsbg"
-                android:layout_gravity="center_horizontal">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@mipmap/ic_launcher"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="40dp"
-                    android:fontFamily="@font/open_sans_extrabold"
-                    android:text="Parking Database"
-                    android:textColor="@color/black"
-                    android:textSize="20sp" />
-
-                <Button
-                    android:id="@+id/pdatabase"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginBottom="0dp"
-                    android:background="@color/transparent"
-                    android:padding="20dp" />
-            </RelativeLayout>
-
-            <RelativeLayout
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
                 android:layout_marginTop="20dp"
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:background="@drawable/parkinglotsbg"
-                android:layout_gravity="center_horizontal">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@mipmap/ic_launcher"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"/>
+                android:layout_below="@+id/parking_monitoring"
+                android:background="@color/transparent"
+                android:layout_centerInParent="true"
+                android:src="@drawable/button_parking_history"
+                />
 
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Parking Lot History"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/open_sans_extrabold"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginTop="10dp"/>
-
-                <Button
-                    android:id="@+id/parkinghistory"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/transparent"
-                    android:padding="20dp" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_marginTop="20dp"
-                android:layout_width="300dp"
-                android:layout_height="60dp"
-                android:background="@drawable/parkinglotsbg"
-                android:layout_gravity="center_horizontal">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:src="@mipmap/ic_launcher"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"/>
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Parking Logs"
-                    android:textColor="@color/black"
-                    android:textSize="20sp"
-                    android:fontFamily="@font/open_sans_extrabold"
-                    android:layout_marginLeft="80dp"
-                    android:layout_marginRight="40dp"
-                    android:layout_marginTop="10dp"/>
-
-                <Button
-                    android:id="@+id/parkinglogs"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentBottom="true"
-                    android:background="@color/transparent"
-                    android:padding="20dp" />
-            </RelativeLayout>
-
-
-        </LinearLayout>
+        </RelativeLayout>
 
 
 

@@ -15,8 +15,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 class Menu : AppCompatActivity() {
     private val parkingfragment =  ParkingFragment()
     private val logsfragment =  LogsFragment()
-    private val scannerfragment =  ScannerFragment()
-    private val guestfragment =  GuestFragment()
     private val accountfragment =  AccountFragment()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

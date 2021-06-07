@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -37,31 +38,31 @@ class ParkingFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view: View = inflater!!.inflate(R.layout.fragment_parking, container, false)
-        view.findViewById<Button>(R.id.claw).setOnClickListener {
+        view.findViewById<ImageButton>(R.id.CLAW).setOnClickListener {
             activity?.let{
                 val intent = Intent (it, ParkingLaw::class.java)
                 it.startActivity(intent)
             }
 
-            view.findViewById<Button>(R.id.chtm).setOnClickListener {
+            view.findViewById<ImageButton>(R.id.CHTM).setOnClickListener {
                 activity?.let{
                     val intent = Intent (it, Che_parking::class.java)
                     it.startActivity(intent)
                 }
             }
-            view.findViewById<Button>(R.id.cn).setOnClickListener {
+            view.findViewById<ImageButton>(R.id.CoN).setOnClickListener {
                 activity?.let{
                     val intent = Intent (it, ConParking::class.java)
                     it.startActivity(intent)
                 }
             }
-            view.findViewById<Button>(R.id.hp).setOnClickListener {
+            view.findViewById<ImageButton>(R.id.Marcelo).setOnClickListener {
                 activity?.let{
                     val intent = Intent (it, HeroesPark::class.java)
                     it.startActivity(intent)
                 }
             }
-            view.findViewById<Button>(R.id.parkinglogs).setOnClickListener {
+            view.findViewById<ImageButton>(R.id.parking_logs).setOnClickListener {
                 activity?.let{
                     val intent = Intent (it, ParkingLogs::class.java)
                     it.startActivity(intent)

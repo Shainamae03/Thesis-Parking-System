@@ -1,30 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg1"
+    android:background="@drawable/bg_menus"
     android:orientation="vertical"
     tools:context=".Notification">
 
 
+
+    <ImageView
+        android:layout_marginTop="15dp"
+        android:id="@+id/imageView"
+        android:layout_width="400dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp" />
+
+
     <TextView
+        android:layout_marginTop="20dp"
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/border"
-        android:gravity="center"
+        android:layout_gravity="center_horizontal"
         android:padding="16dp"
         android:text="PARKING PASS INFORMATION"
+        android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.846"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.279"
         tools:ignore="HardcodedText,MissingConstraints" />
 
     <TextView
@@ -120,10 +128,9 @@
 
     <Button
         android:id="@+id/Approve_btn"
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_marginEnd="188dp"
-        android:layout_marginBottom="92dp"
+
         android:backgroundTint="@color/yellow"
         android:text="Approve to Enter"
         android:textColor="@color/black"
@@ -133,25 +140,13 @@
 
     <Button
         android:id="@+id/Deny_Btn"
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="96dp"
         android:backgroundTint="@color/yellow"
         android:text="Decline To Enter"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="HardcodedText,MissingConstraints" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="400dp"
-        android:layout_height="150dp"
-        app:srcCompat="@drawable/ic_launcher_background"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

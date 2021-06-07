@@ -6,7 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ConParking"
     android:padding="20dp"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:background="@drawable/conpark">
 
     <LinearLayout
         android:layout_marginTop="30dp"

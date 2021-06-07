@@ -8,7 +8,7 @@
         android:topLeftRadius="30dp"
         android:topRightRadius="10dp" />
 
-    <solid android:color="#a74961" />
+    <solid android:color="@color/transparent" />
 
     <padding
         android:bottom="0dp"
