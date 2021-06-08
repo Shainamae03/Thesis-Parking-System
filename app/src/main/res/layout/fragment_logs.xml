@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LogsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/bg_menus">
+    <TextView
+        android:id="@+id/logs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="LOGS"
+        android:textSize="50sp"
+        android:fontFamily="@font/bitter_bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="50dp"
+        android:textAlignment="center" />
+
+            <ImageButton
+                android:id="@+id/client_logs"
+                android:layout_width="350dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:layout_below="@+id/logs"
+                android:background="@color/transparent"
+                android:src="@drawable/button_client_logs"
+                android:scaleType="fitCenter"/>
+
+
+            <ImageButton
+                android:id="@+id/parking_logs"
+                android:layout_width="350dp"
+                android:layout_height="120dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/client_logs"
+                android:background="@color/transparent"
+                android:src="@drawable/button_parking_logs"
+                android:scaleType="fitCenter"/>
+
+
+        <ImageButton
+            android:id="@+id/guest_logs"
+            android:layout_width="350dp"
+            android:layout_height="120dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/parking_logs"
+            android:background="@color/transparent"
+            android:src="@drawable/button_guest_logs"
+            android:scaleType="fitCenter"/>
+
+    </RelativeLayout>
+
+</FrameLayout>
