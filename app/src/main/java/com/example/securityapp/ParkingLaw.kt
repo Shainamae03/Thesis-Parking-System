@@ -20,6 +20,7 @@ class ParkingLaw : AppCompatActivity() {
 
         val s1 = findViewById(R.id.s1) as Button;
         val s2 = findViewById<Button>(R.id.s2)
+        val s3 = findViewById(R.id.s3) as Button
         s1.setOnClickListener {
             if (button_background == 2) {
                 s1.setBackgroundResource(R.drawable.rectangle);
@@ -38,10 +39,18 @@ class ParkingLaw : AppCompatActivity() {
                     s2.setBackgroundResource(R.drawable.ic_car_small);
                     button_background = 2;
                 }
+                s3.setOnClickListener {
+                    if (button_background == 2) {
+                        s3.setBackgroundResource(R.drawable.rectangle);
+                        button_background = 1;
+                    } else if (button_background == 1) {
+                        s3.setBackgroundResource(R.drawable.ic_car_small);
+                        button_background = 2;
+                    }
+                }
             }
         }
     }
 }
-
 
 

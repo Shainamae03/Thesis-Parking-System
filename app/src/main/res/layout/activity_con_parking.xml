@@ -23,20 +23,22 @@
         <RelativeLayout
             android:layout_marginLeft="50dp"
             android:id="@+id/slot1"
-            android:layout_width="40dp"
-            android:layout_height="19dp"
-            android:background="@drawable/rectangle">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/myImageViewText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3dp"
+                android:id="@+id/slot1s"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="3dp"
+                android:background="@drawable/rectangle"
                 android:gravity="center"
                 android:text="Slot 1"
+                android:textAlignment="center"
                 android:textColor="#000000"
-                android:textSize="10sp"
-                android:textAlignment="center"/>
+                android:textSize="10sp" />
 
         </RelativeLayout>
         <RelativeLayout
@@ -271,8 +273,9 @@
                 android:layout_margin="3dp"
                 android:gravity="center"
                 android:text="Slot 13"
+                android:background="@drawable/rectangle"
                 android:textAlignment="center"
-                android:textColor="#000000"
+                android:textColor="@color/black"
                 android:textSize="10sp" />
 
         </RelativeLayout>

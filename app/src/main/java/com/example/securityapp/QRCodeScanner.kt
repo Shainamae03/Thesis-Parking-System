@@ -116,25 +116,29 @@ class QRCodeScanner() : AppCompatActivity() {
                                     pl.text = plnum
                                     sgid.text = secuid
 
-                                    val submitButton: Button = dialog.findViewById(R.id.accept_button)
+                                    val submitButton: Button =
+                                        dialog.findViewById(R.id.accept_button)
                                     submitButton.setOnClickListener(object : View.OnClickListener {
                                         override fun onClick(v: View?) {
 
                                             val database = FirebaseDatabase.getInstance()
                                             val myRef = database.getReference("ClientLogs")
                                             val map: HashMap<String, String?> = hashMapOf(
-                                                    "Name" to username,
-                                                    "PlateNumber" to plnum,
-                                                    "Date" to str_time,
-                                                    "SGID" to secuid,
-                                                    "Empid" to clientid,
-                                                    "Logs" to "Login",
-                                                    "LogStat" to "Entry"
+                                                "Name" to username,
+                                                "PlateNumber" to plnum,
+                                                "Date" to str_time,
+                                                "SGID" to secuid,
+                                                "Empid" to clientid,
+                                                "Logs" to "Login",
+                                                "LogStat" to "Entry"
                                             )
                                             myRef.push().setValue(map)
                                             dialog.dismiss()
                                             val value = it.text
-                                            val i = Intent(this@QRCodeScanner, ParkingLot::class.java)
+                                            val i = Intent(
+                                                this@QRCodeScanner,
+                                                ParkingFragment::class.java
+                                            )
                                             i.putExtra("key", value)
                                             startActivity(i)
                                         }
@@ -144,13 +148,16 @@ class QRCodeScanner() : AppCompatActivity() {
                                     denyButton.setOnClickListener(object : View.OnClickListener {
                                         override fun onClick(v: View?) {
 
-                                            val alertDialog = AlertDialog.Builder(this@QRCodeScanner)
+                                            val alertDialog =
+                                                AlertDialog.Builder(this@QRCodeScanner)
                                             alertDialog.setCancelable(false)
                                             alertDialog.setMessage("What do you mean?")
-                                            alertDialog.setPositiveButton("EXIT", DialogInterface.OnClickListener { dialog, id ->
-                                                val database = FirebaseDatabase.getInstance()
-                                                val myRef = database.getReference("ClientLogs")
-                                                val map: HashMap<String, String?> = hashMapOf(
+                                            alertDialog.setPositiveButton(
+                                                "EXIT",
+                                                DialogInterface.OnClickListener { dialog, id ->
+                                                    val database = FirebaseDatabase.getInstance()
+                                                    val myRef = database.getReference("ClientLogs")
+                                                    val map: HashMap<String, String?> = hashMapOf(
                                                         "Name" to username,
                                                         "PlateNumber" to plnum,
                                                         "Date" to str_time,
@@ -158,13 +165,15 @@ class QRCodeScanner() : AppCompatActivity() {
                                                         "Empid" to clientid,
                                                         "Logs" to "LogOut",
                                                         "LogStat" to "Exit"
-                                                )
-                                                myRef.push().setValue(map)
+                                                    )
+                                                    myRef.push().setValue(map)
 
-                                            })
-                                            alertDialog.setNegativeButton("DENY", DialogInterface.OnClickListener { dialog, id ->
-                                                dialog.cancel()
-                                            })
+                                                })
+                                            alertDialog.setNegativeButton(
+                                                "DENY",
+                                                DialogInterface.OnClickListener { dialog, id ->
+                                                    dialog.cancel()
+                                                })
                                             val alert = alertDialog.create();
                                             alert.setTitle("EXIT OR DENY")
                                             alert.show()
@@ -178,6 +187,7 @@ class QRCodeScanner() : AppCompatActivity() {
                                     TODO("Not yet implemented")
                                 }
                             })
+
 
                         }
                     }

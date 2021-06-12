@@ -31,7 +31,7 @@ class ConParking : AppCompatActivity() {
                 val stat = snapshot.child("status").value.toString()
                 val rootRef = FirebaseDatabase.getInstance().reference
                 val slot13 = findViewById<RelativeLayout>(R.id.slot13)
-
+                val slot1 = findViewById<RelativeLayout>(R.id.slot1)
                 slot13.setOnClickListener(object : View.OnClickListener {
                     override fun onClick(view: View?) {
                         calldata()
@@ -40,97 +40,102 @@ class ConParking : AppCompatActivity() {
                         } else {
                             rootRef.child("CoN Area").child("Slot1").child("status").setValue("avail")
                         }
+
+                        val button = findViewById<Button>(R.id.backimg)
+                        button.setOnClickListener {
+                            startActivity(Intent(this@ConParking, Menu::class.java))
+                        }
+                    }
+
+                    fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
                     }
                 })
-                val button = findViewById<Button>(R.id.backimg)
-                button.setOnClickListener {
-                    startActivity(Intent(this@ConParking, Menu::class.java))
-                }
+                onchange()
             }
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
-        })
-        onchange()
-    }
 
-    fun onchange() {
-        database = FirebaseDatabase.getInstance()
-        databaseReference = database?.reference!!.child("CoN Area").child("Slot1")
-        databaseReference?.addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                val stat = snapshot.child("status").value.toString()
-                val asss = findViewById<TextView>(R.id.asss)
-                //val rectangle_red = ContextCompat.getDrawable(this@ConParking, R.drawable.rectangle_red)
-                if (stat.equals("avail")) {
-                    asss.setBackgroundColor(Color.GREEN)
-                } else if (stat.equals("occupied")) {
-                    asss.setBackgroundColor(Color.RED)
-                }
-            }
+            fun onchange() {
+                database = FirebaseDatabase.getInstance()
+                databaseReference = database?.reference!!.child("CoN Area").child("Slot1")
+                databaseReference?.addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        val stat = snapshot.child("status").value.toString()
+                        val asss = findViewById<TextView>(R.id.asss)
+                        val slot1s = findViewById<TextView>(R.id.slot1s)
+                        //val rectangle_red = ContextCompat.getDrawable(this@ConParking, R.drawable.rectangle_red)
+                        if (stat.equals("avail")) {
+                            asss.setBackgroundResource(R.drawable.rectangle)
+                        } else if (stat.equals("occupied")) {
+                            asss.setBackgroundResource(R.drawable.ic_car_small)
 
-            override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
-            }
-        })
-    }
-
-    fun calldata(){
-
-        val df = SimpleDateFormat("EEE MM/dd/yyyy hh:mm.ss aa")
-        val c = Calendar.getInstance()
-        val str_time: String = df.format(c.time)
-        val extras = intent.extras
-        if (extras != null) {
-            val value = extras.getString("passkey")
-
-            val rootRef = FirebaseDatabase.getInstance().reference
-            val ordersRef = rootRef.child("ClientDb").orderByChild("clientcode").equalTo(value)
-            val valueEventListener = object : ValueEventListener {
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    for (ds in dataSnapshot.children) {
-                        val username = ds.child("firtname").getValue(String::class.java)
-                        val plnum = ds.child("plateNumber").getValue(String::class.java)
-
-                        database = FirebaseDatabase.getInstance()
-                        databaseReference = database?.reference!!.child("CoN Area").child("Slot1")
-                        databaseReference?.addValueEventListener(object : ValueEventListener {
-                            override fun onDataChange(snapshot: DataSnapshot) {
-                                val slot = snapshot.child("sid").value.toString()
-                                val database = FirebaseDatabase.getInstance()
-
-                                val myRef = database.getReference("ParkingLogs")
-                                val map: HashMap<String, String?> = hashMapOf(
-                                        "Name" to username,
-                                        "PlateNumber" to plnum,
-                                        "Date" to str_time,
-                                        "Slot" to slot
-                                )
-                                myRef.push().setValue(map)
-
-                            }
-
-                            override fun onCancelled(error: DatabaseError) {
-                                TODO("Not yet implemented")
-                            }
-                        })
+                        }
                     }
-                }
 
-                override fun onCancelled(databaseError: DatabaseError) {
-                    TODO("Not yet implemented")  //Don't ignore errors!
+
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+                })
+            }
+
+            fun calldata() {
+
+                val df = SimpleDateFormat("EEE MM/dd/yyyy hh:mm.ss aa")
+                val c = Calendar.getInstance()
+                val str_time: String = df.format(c.time)
+                val extras = intent.extras
+                if (extras != null) {
+                    val value = extras.getString("passkey")
+
+                    val rootRef = FirebaseDatabase.getInstance().reference
+                    val ordersRef = rootRef.child("ClientDb").orderByChild("clientcode").equalTo(value)
+                    val valueEventListener = object : ValueEventListener {
+                        override fun onDataChange(dataSnapshot: DataSnapshot) {
+                            for (ds in dataSnapshot.children) {
+                                val username = ds.child("firtname").getValue(String::class.java)
+                                val plnum = ds.child("plateNumber").getValue(String::class.java)
+
+                                database = FirebaseDatabase.getInstance()
+                                databaseReference = database?.reference!!.child("CoN Area").child("Slot1")
+                                databaseReference = database?.reference!!.child("CoN Area").child("Slot2")
+                                databaseReference?.addValueEventListener(object : ValueEventListener {
+                                    override fun onDataChange(snapshot: DataSnapshot) {
+                                        val slot = snapshot.child("sid").value.toString()
+                                        val database = FirebaseDatabase.getInstance()
+
+                                        val myRef = database.getReference("ParkingLogs")
+                                        val map: HashMap<String, String?> = hashMapOf(
+                                                "Name" to username,
+                                                "PlateNumber" to plnum,
+                                                "Date" to str_time,
+                                                "Slot" to slot
+                                        )
+                                        myRef.push().setValue(map)
+
+                                    }
+
+                                    override fun onCancelled(error: DatabaseError) {
+                                        TODO("Not yet implemented")
+                                    }
+                                })
+                            }
+                        }
+
+                        override fun onCancelled(databaseError: DatabaseError) {
+                            TODO("Not yet implemented")  //Don't ignore errors!
+                        }
+                    }
+                    ordersRef.addListenerForSingleValueEvent(valueEventListener)
+                } else {
+                    Toast.makeText(this@ConParking, "Space Occupied", Toast.LENGTH_LONG)
+                            .show()
                 }
             }
-            ordersRef.addListenerForSingleValueEvent(valueEventListener)
-        }else{
-            Toast.makeText(this@ConParking, "Login failed", Toast.LENGTH_LONG)
-                    .show()
-        }
-        }
 
+        })
+    }
 }
-
-
-
-

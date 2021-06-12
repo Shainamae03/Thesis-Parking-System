@@ -7,6 +7,7 @@ import android.text.InputFilter
 import android.text.TextUtils
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -21,7 +22,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         authSecu = FirebaseAuth.getInstance()
         val currentUser = authSecu.currentUser
         if (currentUser != null) {
@@ -31,11 +31,13 @@ class MainActivity : AppCompatActivity() {
         login()
     }
 
+    var totalAttempts = 3
+
     private fun login() {
 
         val secuname = findViewById(R.id.secuname) as EditText
         val code = findViewById(R.id.code) as EditText
-        val button = findViewById(R.id.login) as Button
+        val button = findViewById(R.id.login) as ImageButton
 
         button.setOnClickListener {
             if (TextUtils.isEmpty(secuname.text.toString())) {
@@ -51,43 +53,52 @@ class MainActivity : AppCompatActivity() {
                     code.text.toString()
             )
                     .addOnCompleteListener {
-                        if (it.isSuccessful) {
-                            authSecu = FirebaseAuth.getInstance()
-                            databaseSecu = FirebaseDatabase.getInstance()
-                            val currentUserSecu = authSecu.currentUser
-                            val registeredUserID = currentUserSecu?.getUid()
+                        if (totalAttempts != 0) {
+                            if (it.isSuccessful) {
+                                authSecu = FirebaseAuth.getInstance()
+                                databaseSecu = FirebaseDatabase.getInstance()
+                                val currentUserSecu = authSecu.currentUser
+                                val registeredUserID = currentUserSecu?.getUid()
 
-                            databaseReferenceSecu = registeredUserID?.let { it1 -> databaseSecu?.reference!!.child("SecuDb").child(it1) }
+                                databaseReferenceSecu = registeredUserID?.let { it1 -> databaseSecu?.reference!!.child("SecuDb").child(it1) }
 
-                            databaseReferenceSecu?.addValueEventListener(object : ValueEventListener {
-                                override fun onDataChange(snapshot: DataSnapshot) {
-                                    val ClientDb = snapshot.child("As").value.toString()
-                                    if (ClientDb.equals("Security")) {
-                                        startActivity(Intent(this@MainActivity, Menu::class.java))
+                                databaseReferenceSecu?.addValueEventListener(object : ValueEventListener {
+                                    override fun onDataChange(snapshot: DataSnapshot) {
 
-                                    } else {
-                                        Toast.makeText(this@MainActivity, "Login failed", Toast.LENGTH_LONG)
-                                                .show()
+                                        val ClientDb = snapshot.child("As").value.toString()
+
+                                        if (ClientDb.equals("Security")) {
+                                            startActivity(Intent(this@MainActivity, Menu::class.java))
+                                            finish()
+                                        }
                                     }
 
-                                }
+                                    override fun onCancelled(error: DatabaseError) {
+                                        TODO("Not yet implemented")
+                                    }
+                                })
+                            }else
+                                Toast.makeText(this@MainActivity, "Number of attemps left: ${totalAttempts}", Toast.LENGTH_LONG).show()
+                                totalAttempts--;
 
-                                override fun onCancelled(error: DatabaseError) {
-                                    TODO("Not yet implemented")
-                                }
-                            })
-                        } else {
-                            Toast.makeText(this@MainActivity, "Login failed", Toast.LENGTH_LONG)
+                        } else{
+                            Toast.makeText(this, "Maximum number of attempts exceeded", Toast.LENGTH_SHORT)
                                     .show()
                         }
-                        val maxLength = 10
-                        val filters = arrayOfNulls<InputFilter>(1)
-                        filters[0] = InputFilter.LengthFilter(maxLength)
-                        code.setFilters(filters)
+                                }
+                            }
+                        }
                     }
 
 
-        }
-    }
-}
+
+
+
+
+
+
+
+
+
+
 

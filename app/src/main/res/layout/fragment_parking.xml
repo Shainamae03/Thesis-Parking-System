@@ -47,7 +47,7 @@
                         android:layout_width="250dp"
                         android:layout_height="match_parent"
                         android:layout_alignParentBottom="true"
-                        android:src="@drawable/button_CLAW"
+                        android:src="@drawable/button_claw"
                         android:background="@color/transparent"
                         android:scaleType="fitCenter"
                         android:layout_alignParentTop="true" />
@@ -57,7 +57,7 @@
                         android:layout_width="250dp"
                         android:layout_height="match_parent"
                         android:layout_alignParentBottom="true"
-                        android:src="@drawable/button_CHTM"
+                        android:src="@drawable/button_chtm"
                         android:background="@color/transparent"
                         android:scaleType="fitCenter"
                         android:layout_toRightOf="@+id/claw"/>
@@ -67,7 +67,7 @@
                         android:layout_width="250dp"
                         android:layout_height="match_parent"
                         android:layout_alignParentBottom="true"
-                        android:src="@drawable/button_CoN"
+                        android:src="@drawable/button_con"
                         android:background="@color/transparent"
                         android:scaleType="fitCenter"
                         android:layout_toRightOf="@+id/chtm"/>
