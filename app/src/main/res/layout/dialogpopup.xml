@@ -5,13 +5,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp">
+    android:layout_margin="5dp"
+    android:padding="5dp">
 
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:text="ACCEPT CLIENT?"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -61,7 +61,6 @@
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
         android:text="Plate Number:"
         android:textColor="@color/white"
         android:textSize="20sp"
@@ -84,8 +83,8 @@
         android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="114dp"
         android:text="Accept under SGID:"
         android:textColor="@color/white"
         android:textSize="20sp"

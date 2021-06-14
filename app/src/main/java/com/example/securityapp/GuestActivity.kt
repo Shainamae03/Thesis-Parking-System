@@ -1,80 +1,64 @@
 package com.example.securityapp
 
-import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
+import android.view.Window
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.TextView
-import androidx.appcompat.app.AlertDialog
-import androidx.cardview.widget.CardView
+import android.widget.Toast
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import java.text.SimpleDateFormat
+import java.util.*
 
 class GuestActivity : AppCompatActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_guest)
 
-        register()
+        registeradmin()
     }
-        private fun register() {
 
-            val regButton = findViewById<Button>(R.id.saveclient)
-            val backtomenu = findViewById<ImageButton>(R.id.back)
-            val f_name = findViewById<EditText>(R.id.f_name)
-            val plate_no = findViewById<EditText>(R.id.plate_no)
-            val remarks = findViewById<EditText>(R.id.remarks)
-            val pur_vis = findViewById<EditText>(R.id.pur_vis)
-            val dateof_entry= findViewById<EditText>(R.id.dateof_entry)
-            val timeof_entry = findViewById<EditText>(R.id.timeof_entry)
-            val Gate_No= findViewById<EditText>(R.id.Gate_No)
-            val sgid = findViewById<EditText>(R.id.sgid)
+    private fun registeradmin() {
+        val adminID = findViewById<EditText>(R.id.adminID)
+        val adminName = findViewById<EditText>(R.id.adminName)
+        val adminpass = findViewById<EditText>(R.id.vehicle)
+        val emailaddress = findViewById<EditText>(R.id.reason)
+        val saveclient = findViewById<Button>(R.id.saveclient)
 
-            regButton.setOnClickListener {
 
-                if (TextUtils.isEmpty(f_name.text.toString())) {
-                    f_name.setError("Please enter Full name")
-                    return@setOnClickListener
-                } else if (TextUtils.isEmpty(plate_no.text.toString())) {
-                    plate_no.setError("Please enter Plate Number")
-                    return@setOnClickListener
-                } else if (TextUtils.isEmpty(remarks.text.toString())) {
-                    remarks.setError("Enter Remarks")
-                    return@setOnClickListener
-                } else if (TextUtils.isEmpty(pur_vis.text.toString())) {
-                    pur_vis.setError("Purpose of the visit?")
-                    return@setOnClickListener
-                } else if (TextUtils.isEmpty(dateof_entry.text.toString())) {
-                    dateof_entry.setError("Date of Entry")
-                    return@setOnClickListener
-                } else if (TextUtils.isEmpty(timeof_entry.text.toString())) {
-                    timeof_entry.setError("Time of Entry")
-                    return@setOnClickListener
-                } else if (TextUtils.isEmpty(Gate_No.text.toString())) {
-                    Gate_No.setError("Gate No:")
-                    return@setOnClickListener
-                } else if (TextUtils.isEmpty(sgid.text.toString())) {
-                    sgid.setError("SGID")
-                    return@setOnClickListener
-                }
-            }
-           backtomenu.setOnClickListener{
-               val alertDialog = AlertDialog.Builder(this)
-               alertDialog.setCancelable(false)
-               alertDialog.setMessage("Do you want to proceed?")
-               alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
-                   startActivity(Intent(this@GuestActivity, Menu::class.java))
-               })
-               alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
-                   dialog.cancel()
-               })
-               val alert = alertDialog.create();
-               alert.setTitle("Do you want to exit?")
-               alert.show()
-           }
-        }
-    }
+
+        saveclient.setOnClickListener {
+
+                    val name = adminName.text.toString()
+                    val reason = emailaddress.text.toString()
+                    val vehicle = adminpass.text.toString()
+                    val plnum = adminID.text.toString()
+
+                    val df = SimpleDateFormat("EEE MM/dd/yyyy hh:mm.ss aa")
+                    val c = Calendar.getInstance()
+                    val str_time: String = df.format(c.time)
+
+                    val database = FirebaseDatabase.getInstance()
+                    val myRef = database.getReference("GuestLogs")
+                    val map: HashMap<String, String?> = hashMapOf(
+                        "Name" to name,
+                        "Reason" to reason,
+                        "Vehicle" to vehicle,
+                        "PlateNumber" to plnum,
+                        "Date" to str_time
+                    )
+                    myRef.push().setValue(map)
+
+                        Toast.makeText(this@GuestActivity, "Succes!", Toast.LENGTH_LONG).show()
+                        finish()
+                    }
+}}

@@ -28,7 +28,10 @@
         <activity android:name=".QRCodeScanner" />
         <activity android:name=".SecurityReport" />
         <activity android:name=".ParkingLot" />
-        <activity android:name=".Notification" />
+        <activity android:name=".history" />
+        <activity android:name=".Guestlog" />
+        <activity android:name=".ForgotAdminPass" />
+        <activity android:name=".Client_history_table" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

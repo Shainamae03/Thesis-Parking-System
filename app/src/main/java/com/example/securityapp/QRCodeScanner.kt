@@ -145,41 +145,38 @@ class QRCodeScanner() : AppCompatActivity() {
                                     })
 
                                     val denyButton: Button = dialog.findViewById(R.id.deny_button)
-                                    denyButton.setOnClickListener(object : View.OnClickListener {
-                                        override fun onClick(v: View?) {
+                                    denyButton.setOnClickListener {
+                                        val alertDialog =
+                                            AlertDialog.Builder(this@QRCodeScanner)
+                                        alertDialog.setCancelable(false)
+                                        alertDialog.setMessage("What do you mean?")
+                                        alertDialog.setPositiveButton(
+                                            "EXIT"
+                                        ) { dialog, id ->
+                                            val database = FirebaseDatabase.getInstance()
+                                            val myRef = database.getReference("ClientLogs")
+                                            val map: HashMap<String, String?> = hashMapOf(
+                                                "Name" to username,
+                                                "PlateNumber" to plnum,
+                                                "Date" to str_time,
+                                                "SGID" to secuid,
+                                                "Empid" to clientid,
+                                                "Logs" to "LogOut",
+                                                "LogStat" to "Exit"
+                                            )
+                                            myRef.push().setValue(map)
 
-                                            val alertDialog =
-                                                AlertDialog.Builder(this@QRCodeScanner)
-                                            alertDialog.setCancelable(false)
-                                            alertDialog.setMessage("What do you mean?")
-                                            alertDialog.setPositiveButton(
-                                                "EXIT",
-                                                DialogInterface.OnClickListener { dialog, id ->
-                                                    val database = FirebaseDatabase.getInstance()
-                                                    val myRef = database.getReference("ClientLogs")
-                                                    val map: HashMap<String, String?> = hashMapOf(
-                                                        "Name" to username,
-                                                        "PlateNumber" to plnum,
-                                                        "Date" to str_time,
-                                                        "SGID" to secuid,
-                                                        "Empid" to clientid,
-                                                        "Logs" to "LogOut",
-                                                        "LogStat" to "Exit"
-                                                    )
-                                                    myRef.push().setValue(map)
-
-                                                })
-                                            alertDialog.setNegativeButton(
-                                                "DENY",
-                                                DialogInterface.OnClickListener { dialog, id ->
-                                                    dialog.cancel()
-                                                })
-                                            val alert = alertDialog.create();
-                                            alert.setTitle("EXIT OR DENY")
-                                            alert.show()
-                                            dialog.dismiss()
                                         }
-                                    })
+                                        alertDialog.setNegativeButton(
+                                            "DENY"
+                                        ) { dialog, id ->
+                                            dialog.cancel()
+                                        }
+                                        val alert = alertDialog.create();
+                                        alert.setTitle("EXIT OR DENY")
+                                        alert.show()
+                                        dialog.dismiss()
+                                    }
                                     dialog.show()
                                 }
 

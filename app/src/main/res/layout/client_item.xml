@@ -1,33 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/firtname"
-        android:layout_width="60dp"
-        android:layout_height="wrap_content"
-        android:layout_weight=".2"
-        android:padding="10sp"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
 
-    <TextView
-        android:id="@+id/department"
-        android:layout_width="19dp"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:padding="10sp"
-        android:textColor="@color/black"
-        android:textSize="12sp" />
-    <TextView
-        android:id="@+id/clientcode"
-        android:layout_width="10dp"
-        android:layout_height="match_parent"
-        android:layout_weight=".5"
-        android:padding="10sp"
-        android:text="Client Code"
-        android:textColor="@color/black"
-        android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/adminname"
+            android:layout_width="10dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:padding="5sp"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/id"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="10sp"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
 
-</TableRow>
+        <TextView
+            android:id="@+id/code"
+            android:layout_width="10dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:padding="10sp"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="19dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
+        <TextView
+            android:id="@+id/emailad"
+            android:layout_width="7dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".5"
+            android:padding="5sp"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
+
+    </TableRow>

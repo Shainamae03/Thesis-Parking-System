@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ParkinglotDB"
+    android:orientation="vertical"
+    android:padding="10dp">
+    <TextView
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PARKING LOT DATABASE"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/black"
+        android:layout_gravity="center_horizontal"
+        android:textAlignment="center"/>
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none"
+        android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/maroon"
+                android:layout_marginTop="20dp">
+
+            <TableRow
+                android:background="#00AEAE">
+
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".4"
+                    android:padding="10sp"
+                    android:text="lot ID"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="19dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="10sp"
+                    android:text="Building"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".6"
+                    android:padding="10sp"
+                    android:text="BldgCode"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"/>
+                <TextView
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".7"
+                    android:padding="10sp"
+                    android:text="Total Parking"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"/>
+
+            </TableRow>
+
+                <TableRow
+                    android:background="#8C00AEAE">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".4"
+                        android:padding="10sp"
+                        android:text="1"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="19dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10sp"
+                        android:text="CICT/CON"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".6"
+                        android:padding="10sp"
+                        android:text="CICT"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"/>
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".7"
+                        android:padding="10sp"
+                        android:text="16"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"/>
+
+                </TableRow>
+                <TableRow
+                    android:background="#8C00AEAE">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".4"
+                        android:padding="10sp"
+                        android:text="2"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="19dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10sp"
+                        android:text="College of Law"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".6"
+                        android:padding="10sp"
+                        android:text="LAW"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"/>
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".7"
+                        android:padding="10sp"
+                        android:text="30"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:background="#8C00AEAE">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".4"
+                        android:padding="10sp"
+                        android:text="3"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="19dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10sp"
+                        android:text="CIT"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".6"
+                        android:padding="10sp"
+                        android:text="CIT"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"/>
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".7"
+                        android:padding="10sp"
+                        android:text="10"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"/>
+
+                </TableRow>
+                <TableRow
+                    android:background="#8C00AEAE">
+
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".4"
+                        android:padding="10sp"
+                        android:text="4"
+                        android:textColor="@color/black"
+                        android:textSize="12sp"
+                        android:textAlignment="center"/>
+
+                    <TextView
+                        android:layout_width="19dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="10sp"
+                        android:text="Heroes Park"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".6"
+                        android:padding="10sp"
+                        android:text="HP"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"/>
+                    <TextView
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight=".7"
+                        android:padding="10sp"
+                        android:text="4"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"/>
+
+                </TableRow>
+
+            </TableLayout>
+        </LinearLayout>
+    </ScrollView>
+    <Button
+        android:id="@+id/back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back" />
+</LinearLayout>

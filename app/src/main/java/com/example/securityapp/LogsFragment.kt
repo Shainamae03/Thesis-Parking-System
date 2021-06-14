@@ -1,10 +1,12 @@
 package com.example.securityapp
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +36,28 @@ class LogsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_logs, container, false)
+        val view: View = inflater!!.inflate(R.layout.fragment_logs, container, false)
+
+        view.findViewById<ImageButton>(R.id.client_logs).setOnClickListener {
+            activity?.let {
+                val intent = Intent(it, Client_history_table::class.java)
+                it.startActivity(intent)
+            }
+        }
+        view.findViewById<ImageButton>(R.id.parking_logs).setOnClickListener {
+            activity?.let {
+                val intent = Intent(it, history::class.java)
+                it.startActivity(intent)
+            }
+        }
+
+        view.findViewById<ImageButton>(R.id.guest_logs).setOnClickListener {
+            activity?.let {
+                val intent = Intent(it, Guestlog::class.java)
+                it.startActivity(intent)
+            }
+        }
+        return view
     }
 
     companion object {

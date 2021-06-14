@@ -1,180 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_menus"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".AccountFragment">
+
 
     <!-- TODO: Update blank fragment layout -->
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-       <RelativeLayout
-           android:id="@+id/headerblue"
-       android:layout_width="match_parent"
-       android:layout_height="280dp"
-       android:background="@drawable/bg_security_profile"
-           android:fitsSystemWindows="true"/>
-        <TextView
+        <ImageView
+            android:id="@+id/header"
             android:layout_width="match_parent"
+            android:layout_height="240dp"
+            android:layout_alignParentTop="true"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:src="@drawable/bg_security_profile"
+            android:scaleType="centerCrop"
+            />
+
+        <TextView
+            android:id="@+id/adminName"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="SECURITY NAME"
-            android:textSize="25sp"
+            android:layout_below="@+id/header"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="Admin Name"
             android:textColor="@color/black"
-            android:fontFamily="sans-serif-condensed-medium"/>
+            android:textSize="35dp" />
+
         <TextView
-            android:layout_width="match_parent"
+            android:id="@+id/adminmail"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="security@gmail.com"
+            android:layout_below="@+id/adminName"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="5dp"
             android:textSize="17sp"
-            android:textColor="@color/black"
-            android:fontFamily="sans-serif-condensed-medium"/>
+            android:fontFamily="@font/open_sans_semibold"
+            android:text="admin_name@gmail.com"
+            android:textColor="@color/black" />
 
+        <ImageButton
+            android:id="@+id/clientchangepass"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/editdetails"
+            android:layout_marginTop="10dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/button_change_pass" />
 
-        <RelativeLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
+        <ImageButton
+            android:id="@+id/editdetails"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/adminmail"
+            android:layout_marginTop="50dp"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@drawable/button_change_email" />
+
+        <ImageButton
+            android:id="@+id/admin_logout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@+id/clientchangepass"
+            android:layout_alignParentStart="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="8dp"
             android:background="@color/transparent"
-            android:layout_gravity="left">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp" />
+            android:scaleType="centerInside"
+            android:src="@drawable/button_logout" />
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="40dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="ITEM 1"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="0dp"
-                android:background="@color/transparent" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:background="@color/transparent"
-            android:layout_gravity="left">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="40dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="ITEM 2"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="0dp"
-                android:background="@color/transparent" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:background="@color/transparent"
-            android:layout_gravity="left">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="40dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="ITEM 3"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="0dp"
-                android:background="@color/transparent" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_marginTop="20dp"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
-            android:background="@color/transparent"
-            android:layout_gravity="left">
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@mipmap/ic_launcher"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="80dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginRight="40dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:text="LOG-OUT"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
-
-            <Button
-                android:id="@+id/logout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_alignParentBottom="true"
-                android:layout_marginBottom="0dp"
-                android:background="@color/transparent" />
-        </RelativeLayout>
-
-
-    </LinearLayout>
-
+    </RelativeLayout>
 
 </FrameLayout>

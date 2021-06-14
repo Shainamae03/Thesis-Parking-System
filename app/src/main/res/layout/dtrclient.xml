@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="3dp">
+
+
+    <TextView
+        android:id="@+id/adminname"
+        android:layout_width="10dp"
+        android:layout_height="match_parent"
+        android:layout_weight=".5"
+        android:padding="10sp"
+        android:textColor="@color/black"
+        android:textSize="12sp"/>
+    <TextView
+        android:id="@+id/id"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:padding="10sp"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/code"
+        android:layout_width="10dp"
+        android:layout_height="wrap_content"
+        android:layout_weight=".5"
+        android:padding="10sp"
+        android:textColor="@color/black"
+        android:textSize="12sp" />
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="25dp"
+        android:padding="10sp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textColor="@color/black"
+        android:textSize="12sp"/>
+
+</TableRow>

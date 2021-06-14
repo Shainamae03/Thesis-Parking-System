@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
 import androidx.appcompat.app.AlertDialog
 
 class SecurityReport : AppCompatActivity() {
@@ -12,21 +13,11 @@ class SecurityReport : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_security_report)
 
-        val back3_btn = findViewById(R.id.back3_btn) as Button
+        val back3_btn = findViewById<ImageButton>(R.id.back3_btn)
 
         back3_btn.setOnClickListener {
-            val alertDialog = AlertDialog.Builder(this)
-            alertDialog.setCancelable(false)
-            alertDialog.setMessage("Do you want to proceed?")
-            alertDialog.setPositiveButton("yes", DialogInterface.OnClickListener { dialog, id ->
                 startActivity(Intent(this@SecurityReport, Menu::class.java))
-            })
-            alertDialog.setNegativeButton("No", DialogInterface.OnClickListener { dialog, id ->
-                dialog.cancel()
-            })
-            val alert = alertDialog.create();
-            alert.setTitle("Approve Upon Entry")
-            alert.show()
+
         }
     }
 }
