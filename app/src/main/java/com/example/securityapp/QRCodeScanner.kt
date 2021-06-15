@@ -16,6 +16,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.budiyev.android.codescanner.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
@@ -85,6 +86,8 @@ class QRCodeScanner() : AppCompatActivity() {
                             val username = ds.child("firtname").getValue(String::class.java)
                             val plnum = ds.child("plateNumber").getValue(String::class.java)
                             val clientid = ds.child("empid").getValue(String::class.java)
+                            val secondvehicle = ds.child("secondbrand").getValue(String::class.java)
+                            val secondpl = ds.child("secondpl").getValue(String::class.java)
 
                             auth = FirebaseAuth.getInstance()
                             database = FirebaseDatabase.getInstance()
@@ -110,11 +113,15 @@ class QRCodeScanner() : AppCompatActivity() {
                                     val name: TextView = dialog.findViewById(R.id.cc_et)
                                     val pl: TextView = dialog.findViewById(R.id.pl_et)
                                     val sgid: TextView = dialog.findViewById(R.id.sg_et)
+                                    val spl: TextView = dialog.findViewById(R.id.spl)
+                                    val sbrand: TextView = dialog.findViewById(R.id.sbrand)
 
                                     name.text = username
                                     cc.text = it.text
                                     pl.text = plnum
                                     sgid.text = secuid
+                                    spl.text = secondpl
+                                    sbrand.text = secondvehicle
 
                                     val submitButton: Button =
                                         dialog.findViewById(R.id.accept_button)
@@ -134,13 +141,14 @@ class QRCodeScanner() : AppCompatActivity() {
                                             )
                                             myRef.push().setValue(map)
                                             dialog.dismiss()
+
                                             val value = it.text
-                                            val i = Intent(
-                                                this@QRCodeScanner,
-                                                ParkingFragment::class.java
-                                            )
-                                            i.putExtra("key", value)
-                                            startActivity(i)
+                                            val mFragment = Fragment()
+                                            val mArgs = Bundle()
+                                            mArgs.putString("Key", value)
+                                            mFragment.arguments = mArgs
+
+                                            startActivity(Intent(this@QRCodeScanner, ParkingFragment::class.java))
                                         }
                                     })
 

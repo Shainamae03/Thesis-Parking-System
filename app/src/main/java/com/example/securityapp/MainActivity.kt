@@ -35,16 +35,16 @@ class MainActivity : AppCompatActivity() {
 
     private fun login() {
 
-        val secuname = findViewById(R.id.secuname) as EditText
-        val code = findViewById(R.id.code) as EditText
-        val button = findViewById(R.id.login) as ImageButton
+        val secuname = findViewById<EditText>(R.id.secuname)
+        val code = findViewById<EditText>(R.id.code)
+        val button = findViewById<ImageButton>(R.id.login)
 
         button.setOnClickListener {
             if (TextUtils.isEmpty(secuname.text.toString())) {
-                secuname.setError("Please enter your email!")
+                secuname.error = "Please enter your email!"
                 return@setOnClickListener
             } else if (TextUtils.isEmpty(code.text.toString())) {
-                code.setError("Please enter password!")
+                code.error = "Please enter password!"
                 return@setOnClickListener
             }
 

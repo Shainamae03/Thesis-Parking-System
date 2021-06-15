@@ -9,9 +9,14 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.google.firebase.database.*
 import java.text.SimpleDateFormat
 import java.util.*
+import android.R.string.no
+
+
+
 
 
 class ConParking : AppCompatActivity() {
@@ -1013,19 +1018,20 @@ class ConParking : AppCompatActivity() {
         val df = SimpleDateFormat("EEE MM/dd/yyyy hh:mm.ss aa")
         val c = Calendar.getInstance()
         val str_time: String = df.format(c.time)
-        val extras = intent.extras
-        if (extras != null) {
-            val value = extras.getString("passkey")
+
+        val intent = intent
+        val message = intent.getStringExtra("message")
+
 
             val rootRef = FirebaseDatabase.getInstance().reference
-            val ordersRef = rootRef.child("ClientDb").orderByChild("clientcode").equalTo(value)
+            val ordersRef = rootRef.child("ClientDb").orderByChild("clientcode").equalTo(message)
             val valueEventListener = object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
                     for (ds in dataSnapshot.children) {
                         val username = ds.child("firtname").getValue(String::class.java)
                         val plnum = ds.child("plateNumber").getValue(String::class.java)
 
-                        val rootReff = rootRef.child("CoN Area")
+                        val rootReff = rootRef.child("CoN Area").child("Slot1")
                         rootReff.addListenerForSingleValueEvent(object : ValueEventListener {
                             override fun onDataChange(snapshot: DataSnapshot) {
                                 val slot = snapshot.child("sid").value.toString()
@@ -1054,10 +1060,7 @@ class ConParking : AppCompatActivity() {
                 }
             }
             ordersRef.addListenerForSingleValueEvent(valueEventListener)
-        }else{
-            Toast.makeText(this@ConParking, "Failed to record client", Toast.LENGTH_LONG)
-                .show()
+
         }
     }
 
-}

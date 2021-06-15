@@ -37,11 +37,11 @@ class ParkingLot : AppCompatActivity() {
         val con = findViewById<CardView>(R.id.cn)
         con.setOnClickListener {
             val extras = intent.extras
+
             if (extras != null) {
                 val value = extras.getString("key")
-                val passval = value
                 val i = Intent(this@ParkingLot, ConParking::class.java)
-                i.putExtra("passkey", passval)
+                i.putExtra("passkey", value)
                 startActivity(i)
             }
         }

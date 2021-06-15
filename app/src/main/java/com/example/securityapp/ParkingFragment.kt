@@ -6,9 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
-import com.example.securityapp.R
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -54,15 +52,22 @@ class ParkingFragment : Fragment() {
             }
         }
         view.findViewById<ImageButton>(R.id.cn).setOnClickListener {
-            activity?.let{
+            activity?.let {
 
+                val args = arguments
+                val index = args?.getString("Key")
 
-                val intent = Intent (it, ConParking::class.java)
-                it.startActivity(intent)
+                val intent = Intent(
+                    activity!!.baseContext,
+                    ConParking::class.java
+                )
+                intent.putExtra("message", index)
+                activity!!.startActivity(intent)
             }
         }
         view.findViewById<ImageButton>(R.id.hp).setOnClickListener {
             activity?.let{
+
                 val intent = Intent (it, HeroesPark::class.java)
                 it.startActivity(intent)
             }
